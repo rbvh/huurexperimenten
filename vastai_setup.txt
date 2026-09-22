@@ -1,0 +1,99 @@
+On a machine with CUDA 12.9
+
+```
+bash <<'SETUP'
+set -euo pipefail
+
+apt-get update
+apt-get install -y curl ca-certificates screen libgomp1
+
+curl -LsSf https://astral.sh/uv/install.sh -o /tmp/gemma-install-uv.sh
+sh /tmp/gemma-install-uv.sh
+export PATH="$HOME/.local/bin:$PATH"
+
+mkdir -p /workspace
+uv venv --python 3.12 --managed-python /workspace/gemma-cu129
+source /workspace/gemma-cu129/bin/activate
+
+# Find the official CUDA 12.9 wheel for this exact vLLM release.
+VLLM_WHEEL_URL=$(python - <<'PY'
+import json
+import platform
+import urllib.request
+
+url = "https://api.github.com/repos/vllm-project/vllm/releases/tags/v0.29.0"
+with urllib.request.urlopen(url) as response:
+    release = json.load(response)
+
+arch = platform.machine()
+matches = [
+    asset["browser_download_url"]
+    for asset in release["assets"]
+    if "cu129" in asset["name"]
+    and asset["name"].endswith(f"{arch}.whl")
+]
+if len(matches) != 1:
+    raise SystemExit(f"Expected one CUDA 12.9 wheel, found: {matches}")
+
+print(matches[0])
+PY
+)
+
+uv pip install --torch-backend=cu129 "$VLLM_WHEEL_URL"
+uv pip check
+
+# Confirm the GPU and native vLLM extension both work.
+python - <<'PY'
+import torch
+import vllm
+import vllm._C_stable_libtorch
+
+assert torch.cuda.is_available(), "GPU is not accessible"
+assert torch.version.cuda == "12.9", torch.version.cuda
+print("vLLM:", vllm.__version__)
+print("PyTorch:", torch.__version__)
+print("CUDA:", torch.version.cuda)
+print("GPU:", torch.cuda.get_device_name(0))
+PY
+
+vllm --version
+SETUP
+```
+
+
+To set up Gemma4
+
+```
+source /workspace/gemma-cu129/bin/activate
+export HF_HOME=/workspace/huggingface
+
+vllm serve RedHatAI/gemma-4-26B-A4B-it-FP8-dynamic \
+  --served-model-name gemma \
+  --host 127.0.0.1 \
+  --port 8000 \
+  --max-model-len 8192 \
+  --max-num-seqs 1 \
+  --gpu-memory-utilization 0.90 \
+  --limit-mm-per-prompt '{"image":1,"audio":0,"video":0}' \
+  --reasoning-parser gemma4 \
+  --structured-outputs-config '{"backend":"xgrammar","disable_any_whitespace":true}'
+```
+
+To set up Nuextract3
+
+```
+source /workspace/gemma-cu129/bin/activate
+export HF_HOME=/workspace/huggingface
+
+vllm serve numind/NuExtract3 \
+  --served-model-name nuextract3 \
+  --host 127.0.0.1 \
+  --port 8000 \
+  --trust-remote-code \
+  --chat-template-content-format openai \
+  --generation-config vllm \
+  --max-model-len 16384 \
+  --max-num-seqs 1 \
+  --gpu-memory-utilization 0.90 \
+  --limit-mm-per-prompt '{"image":1,"video":0}'
+```

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rental Contract Extraction Quality — 8 Pipeline Comparison</title>
+<style>
+:root{--ink:#17212b;--muted:#64717d;--paper:#f3f1eb;--card:#fff;--line:#dce1e2;--navy:#17364d;--teal:#11756f;--green:#25845d;--lime:#75a843;--amber:#d08a18;--orange:#d26732;--red:#c54e54;--blue:#466fad}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(1240px,calc(100% - 34px));margin:auto}
+header{padding:58px 0 44px;background:linear-gradient(125deg,#10293d,#174c58 67%,#128077);color:#fff}.kicker{margin:0 0 10px;color:#9eddd6;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}h1{max-width:980px;margin:0;font-size:clamp(37px,6vw,68px);line-height:1.01;letter-spacing:-.045em}header .lead{max-width:900px;margin:20px 0 0;color:#d9e9ec;font-size:18px}.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:23px;color:#bfd3d9;font-size:13px}button{margin-top:23px;padding:8px 13px;border:1px solid #ffffff55;border-radius:8px;background:#ffffff13;color:#fff;font:inherit;cursor:pointer}
+main{padding:28px 0 65px}section{margin-top:30px}h2{margin:0;color:var(--navy);font-size:27px;letter-spacing:-.025em}h3{margin:0;color:var(--navy);font-size:17px}p{margin:8px 0 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:14px}.note{max-width:650px;color:var(--muted);font-size:13px}
+.verdict{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;padding:25px 27px;border:1px solid #b7d6d1;border-radius:16px;background:linear-gradient(110deg,#fff,#eaf7f4);box-shadow:0 12px 30px #15344910}.verdict strong{color:var(--teal)}.badge{padding:9px 13px;border-radius:99px;background:#d8efe9;color:#0d635d;font-size:12px;font-weight:850;white-space:nowrap}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:15px}.metric,.panel,.compare-card,.field-card{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:0 10px 26px #17364d0c}.metric{padding:18px}.metric b{display:block;color:var(--navy);font-size:31px;line-height:1}.metric span{display:block;margin-top:8px;color:var(--muted);font-size:12px}
+.tablebox{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 10px 26px #17364d0c}table{width:100%;border-collapse:collapse;font-size:12.5px}th,td{padding:10px 11px;text-align:left;vertical-align:middle;border-bottom:1px solid #edf0f1}th{position:sticky;top:0;z-index:1;background:#f3f6f6;color:#435461;font-size:10px;letter-spacing:.055em;text-transform:uppercase}tr:last-child td{border-bottom:0}td small{display:block;color:var(--muted);font-size:10.5px}.num{text-align:center;white-space:nowrap}.rank{width:38px;text-align:center;color:var(--muted);font-weight:800}.strong{color:var(--green);font-weight:850}.missing{color:var(--amber);font-weight:750}.wrong{color:var(--red);font-weight:750}
+.scoreline{display:grid;grid-template-columns:48px 95px;align-items:center;gap:8px}.track{display:block;height:7px;overflow:hidden;border-radius:99px;background:#e8edef}.track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--teal),#54a885)}
+.compare-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.compare-card{padding:17px}.compare-card span,.field-card span{display:block;color:var(--muted);font-size:12px}.compare-card b{display:block;margin:4px 0;color:var(--navy);font-size:28px}.compare-card small{display:block;min-height:35px;color:var(--muted)}.compare-card .track,.field-card .track{margin-top:10px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:21px}.stat-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.stat-pair div{padding:14px;border-radius:11px;background:#f5f7f6}.stat-pair b{display:block;color:var(--navy);font-size:25px}.stat-pair span{color:var(--muted);font-size:11px}.callout{margin-top:14px;padding:13px 15px;border-left:4px solid var(--amber);background:#fff8eb;color:#4f5961;font-size:13px}
+.fields{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}.field-card{padding:16px}.field-card b{display:block;margin-top:4px;color:var(--navy);font-size:22px}.field-card em{color:var(--muted);font-size:11px;font-style:normal}
+.heat{min-width:58px;text-align:center;font-weight:850;border-left:2px solid #fff}.s5{background:#dcefe4;color:#176b49}.s4{background:#f2edce;color:#74610b}.s3{background:#f8dcc6;color:#9a4d20}.s2,.s1,.s0{background:#f2cdd0;color:#9a3038}.legend{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0 0;color:var(--muted);font-size:11px}.legend i{display:inline-block;width:10px;height:10px;margin-right:5px;border-radius:2px;vertical-align:-1px}
+.findings{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.finding{padding:19px;border:1px solid var(--line);border-radius:13px;background:#fff}.finding b{color:var(--navy)}.finding p{color:var(--muted);font-size:13px}code{padding:1px 5px;border-radius:5px;background:#edf1f1;font-size:.92em}details{border:1px solid var(--line);border-radius:14px;background:#fff}summary{padding:17px 20px;color:var(--navy);font-weight:800;cursor:pointer}details .inside{padding:0 20px 20px}.method{padding:17px 19px;border:1px solid #ddd7c6;border-radius:12px;background:#fffdf7;color:#5c5a52;font-size:12.5px}footer{padding:0 0 34px;color:var(--muted);font-size:11px}
+@media(max-width:900px){.metrics,.compare-grid{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.fields{grid-template-columns:repeat(3,1fr)}.verdict{grid-template-columns:1fr}.badge{justify-self:start}}
+@media(max-width:560px){.metrics,.compare-grid,.fields,.findings{grid-template-columns:1fr}.section-head{display:block}.wrap{width:calc(100% - 20px)}}
+@media print{body{background:#fff}header{padding:25px 0;background:var(--navy)!important;print-color-adjust:exact}button{display:none}section{break-inside:avoid}.metric,.panel,.tablebox,.compare-card,.field-card{box-shadow:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<p class="kicker">Rental contract extraction · full pipeline benchmark</p>
+<h1>Markdown wins—unless NuExtract reads the PDF directly.</h1>
+<p class="lead">Eight paths were scored against 15 manually audited contracts. The best two-stage routes reach 94.7% field accuracy; direct PDF extraction ranges from 58.7% with the general LLM to 92.0% with NuExtract3.</p>
+<div class="meta"><span>15 contracts</span><span>8 paths</span><span>120 final records</span><span>496 schema-valid JSON outputs</span><span>18 September 2026</span><span>General LLM: gemma · NuExtract: nuextract3</span></div>
+<button onclick="window.print()">Print / save PDF</button>
+</div></header>
+
+<main class="wrap">
+<section class="verdict">
+<div><h2>Best default: MarkItDown → LLM</h2><p><strong>94.7% field accuracy and 12/15 fully correct contracts.</strong> NuExtract Markdown → LLM ties on fields at 94.7%, while preserving one fewer fully correct contract. For direct images, NuExtract is the clear choice.</p></div>
+<span class="badge">Human review still needed</span>
+</section>
+
+<section class="metrics">
+<div class="metric"><b>94.7%</b><span>Best route field accuracy</span></div>
+<div class="metric"><b>12/15</b><span>Fully correct contracts on the best route</span></div>
+<div class="metric"><b>86.2%</b><span>Accuracy across all eight paths</span></div>
+<div class="metric"><b>496/496</b><span>Outputs valid against the schema</span></div>
+</section>
+
+<section>
+<div class="section-head"><div><p class="kicker">Route ranking</p><h2>Every pipeline, scored field by field</h2></div><p class="note">Five informative fields are scored per contract: renter, explicit total rent, street, postcode, and city. Country was correctly null in every result and is reported separately.</p></div>
+<div class="tablebox"><table>
+<thead><tr><th>#</th><th>Pipeline</th><th>Accuracy</th><th>Perfect</th><th>Renter</th><th>Total rent</th><th>Street</th><th>Postcode</th><th>City</th><th>Missing</th><th>Wrong</th></tr></thead>
+<tbody><tr>
+<td class="rank">1</td>
+<td><b>MarkItDown → LLM</b><small>markdown_markitdown/llm</small></td>
+<td><div class="scoreline"><b>94.7%</b><span class="track"><i style="width:94.7%"></i></span></div></td>
+<td class="num strong">12/15</td>
+<td class='num'>14/15</td><td class='num'>12/15</td><td class='num'>15/15</td><td class='num'>15/15</td><td class='num'>15/15</td>
+<td class="num missing">2</td>
+<td class="num wrong">2</td>
+</tr><tr>
+<td class="rank">2</td>
+<td><b>NuExtract Markdown → LLM</b><small>markdown_nuextract/llm</small></td>
+<td><div class="scoreline"><b>94.7%</b><span class="track"><i style="width:94.7%"></i></span></div></td>
+<td class="num strong">11/15</td>
+<td class='num'>13/15</td><td class='num'>13/15</td><td class='num'>15/15</td><td class='num'>15/15</td><td class='num'>15/15</td>
+<td class="num missing">2</td>
+<td class="num wrong">2</td>
+</tr><tr>
+<td class="rank">3</td>
+<td><b>NuExtract Markdown → NuExtract</b><small>markdown_nuextract/nuextract</small></td>
+<td><div class="scoreline"><b>93.3%</b><span class="track"><i style="width:93.3%"></i></span></div></td>
+<td class="num strong">11/15</td>
+<td class='num'>12/15</td><td class='num'>13/15</td><td class='num'>15/15</td><td class='num'>15/15</td><td class='num'>15/15</td>
+<td class="num missing">4</td>
+<td class="num wrong">1</td>
+</tr><tr>
+<td class="rank">4</td>
+<td><b>PDF images → NuExtract</b><small>pdf/nuextract</small></td>
+<td><div class="scoreline"><b>92.0%</b><span class="track"><i style="width:92.0%"></i></span></div></td>
+<td class="num strong">11/15</td>
+<td class='num'>12/15</td><td class='num'>13/15</td><td class='num'>15/15</td><td class='num'>15/15</td><td class='num'>14/15</td>
+<td class="num missing">5</td>
+<td class="num wrong">1</td>
+</tr><tr>
+<td class="rank">5</td>
+<td><b>MarkItDown → NuExtract</b><small>markdown_markitdown/nuextract</small></td>
+<td><div class="scoreline"><b>89.3%</b><span class="track"><i style="width:89.3%"></i></span></div></td>
+<td class="num strong">8/15</td>
+<td class='num'>11/15</td><td class='num'>11/15</td><td class='num'>15/15</td><td class='num'>15/15</td><td class='num'>15/15</td>
+<td class="num missing">6</td>
+<td class="num wrong">2</td>
+</tr><tr>
+<td class="rank">6</td>
+<td><b>LLM Markdown → LLM</b><small>markdown_llm/llm</small></td>
+<td><div class="scoreline"><b>86.7%</b><span class="track"><i style="width:86.7%"></i></span></div></td>
+<td class="num strong">6/15</td>
+<td class='num'>12/15</td><td class='num'>13/15</td><td class='num'>10/15</td><td class='num'>15/15</td><td class='num'>15/15</td>
+<td class="num missing">3</td>
+<td class="num wrong">7</td>
+</tr><tr>
+<td class="rank">7</td>
+<td><b>LLM Markdown → NuExtract</b><small>markdown_llm/nuextract</small></td>
+<td><div class="scoreline"><b>80.0%</b><span class="track"><i style="width:80.0%"></i></span></div></td>
+<td class="num strong">4/15</td>
+<td class='num'>10/15</td><td class='num'>12/15</td><td class='num'>10/15</td><td class='num'>14/15</td><td class='num'>14/15</td>
+<td class="num missing">7</td>
+<td class="num wrong">8</td>
+</tr><tr>
+<td class="rank">8</td>
+<td><b>PDF images → LLM</b><small>pdf/llm</small></td>
+<td><div class="scoreline"><b>58.7%</b><span class="track"><i style="width:58.7%"></i></span></div></td>
+<td class="num strong">2/15</td>
+<td class='num'>12/15</td><td class='num'>6/15</td><td class='num'>6/15</td><td class='num'>8/15</td><td class='num'>12/15</td>
+<td class="num missing">17</td>
+<td class="num wrong">14</td>
+</tr></tbody>
+</table></div>
+</section>
+
+<section>
+<div class="section-head"><div><p class="kicker">Input source</p><h2>NuExtract Markdown is strongest on average</h2></div><p class="note">Each card pools both extractors, exposing the quality of the input representation. Direct PDF is included as a baseline.</p></div>
+<div class="compare-grid"><div class="compare-card">
+<span>NuExtract Markdown</span>
+<b>94.0%</b>
+<small>141/150 fields across both extractors</small>
+<div class="track"><i style="width:94.0%"></i></div>
+</div><div class="compare-card">
+<span>MarkItDown</span>
+<b>92.0%</b>
+<small>138/150 fields across both extractors</small>
+<div class="track"><i style="width:92.0%"></i></div>
+</div><div class="compare-card">
+<span>LLM Markdown</span>
+<b>83.3%</b>
+<small>125/150 fields across both extractors</small>
+<div class="track"><i style="width:83.3%"></i></div>
+</div><div class="compare-card">
+<span>PDF images</span>
+<b>75.3%</b>
+<small>113/150 fields across both extractors</small>
+<div class="track"><i style="width:75.3%"></i></div>
+</div></div>
+</section>
+
+<section class="split">
+<div class="panel"><p class="kicker">Extractor effect</p><h2>Text and images favor different models</h2>
+<div class="stat-pair"><div><b>92.0%</b><span>LLM on the three Markdown sources</span></div><div><b>87.6%</b><span>NuExtract on the three Markdown sources</span></div></div>
+<div class="callout">On Markdown, the general LLM leads by 4.4%. NuExtract loses renter names more often, especially when names appear on different pages or multiple renters share one field.</div>
+</div>
+<div class="panel"><p class="kicker">Direct-image effect</p><h2>NuExtract reverses the result on PDFs</h2>
+<div class="stat-pair"><div><b>92.0%</b><span>PDF images → NuExtract</span></div><div><b>58.7%</b><span>PDF images → LLM</span></div></div>
+<div class="callout">NuExtract gains 33.3% on the same rendered pages. The general LLM produces frequent OCR errors, incomplete addresses, and wrong address selection.</div>
+</div>
+</section>
+
+<section>
+<div class="section-head"><div><p class="kicker">Field reliability</p><h2>Rent and renter identity remain hardest</h2></div><p class="note">Totals combine all 8 routes × 15 contracts. Equivalent accents, punctuation, and “en” versus semicolon separators are accepted for renter names.</p></div>
+<div class="fields"><div class="field-card">
+<span>Renter</span>
+<b>96/120</b>
+<em>80.0%</em>
+<div class="track"><i style="width:80.0%"></i></div>
+</div><div class="field-card">
+<span>Total rent</span>
+<b>93/120</b>
+<em>77.5%</em>
+<div class="track"><i style="width:77.5%"></i></div>
+</div><div class="field-card">
+<span>Street</span>
+<b>101/120</b>
+<em>84.2%</em>
+<div class="track"><i style="width:84.2%"></i></div>
+</div><div class="field-card">
+<span>Postcode</span>
+<b>112/120</b>
+<em>93.3%</em>
+<div class="track"><i style="width:93.3%"></i></div>
+</div><div class="field-card">
+<span>City</span>
+<b>115/120</b>
+<em>95.8%</em>
+<div class="track"><i style="width:95.8%"></i></div>
+</div></div>
+</section>
+
+<section>
+<div class="section-head"><div><p class="kicker">Contract heatmap</p><h2>Where each path succeeds or fails</h2></div><p class="note">Hover a cell to see which fields were missed. A 5/5 cell means the complete final record is correct on all informative fields.</p></div>
+<div class="tablebox"><table>
+<thead><tr><th>Contract</th><th title='LLM Markdown → LLM'>ML→L</th><th title='LLM Markdown → NuExtract'>ML→N</th><th title='MarkItDown → LLM'>MM→L</th><th title='MarkItDown → NuExtract'>MM→N</th><th title='NuExtract Markdown → LLM'>MN→L</th><th title='NuExtract Markdown → NuExtract'>MN→N</th><th title='PDF images → LLM'>PDF→L</th><th title='PDF images → NuExtract'>PDF→N</th></tr></thead>
+<tbody><tr><td><b>01 · ROZ 2025</b><small>01_ROZ_2025_ingevuld</small></td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s3' title='Missed: Total rent, Street'>3/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>02 · VoorbeeldOffice</b><small>02_VoorbeeldOffice_ingevuld</small></td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>03 · TopVoorbeelden</b><small>03_TopVoorbeelden_ingevuld</small></td><td class='heat s3' title='Missed: Total rent, Street'>3/5</td><td class='heat s3' title='Missed: Total rent, Street'>3/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s2' title='Missed: Total rent, Street, Postcode'>2/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td></tr><tr><td><b>04 · Woonbond formulier</b><small>04_Woonbond_formulier_ingevuld</small></td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>05 · VBTM onzelfstandig</b><small>05_VBTM_onzelfstandig_ingevuld</small></td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s3' title='Missed: Street, Postcode'>3/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>06 · Kences campuscontract</b><small>06_Kences_campuscontract_ingevuld</small></td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s2' title='Missed: Street, Postcode, City'>2/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>07 · NVM klassiek</b><small>07_NVM_klassiek_ingevuld</small></td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: City'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s2' title='Missed: Total rent, Street, Postcode'>2/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>08 · Eenvoudig 1 pagina</b><small>08_Eenvoudig_1_pagina_ingevuld</small></td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>09 · Hayman NL EN</b><small>09_Hayman_NL_EN_ingevuld</small></td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s3' title='Missed: Postcode, City'>3/5</td><td class='heat s3' title='Missed: Renter, City'>3/5</td></tr><tr><td><b>10 · model-huurovereenkomst-zelfstandige-woonruimte-2026</b><small>10_model-huurovereenkomst-zelfstandige-woonruimte-2026</small></td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Total rent'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>11 · Lang formeel particulier contract</b><small>11_Lang_formeel_particulier_contract_ingevuld</small></td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s2' title='Missed: Renter, Street, Postcode'>2/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s2' title='Missed: Total rent, Street, Postcode'>2/5</td><td class='heat s4' title='Missed: Renter'>4/5</td></tr><tr><td><b>12 · Traditioneel woningcorporatiemodel</b><small>12_Traditioneel_woningcorporatiemodel_ingevuld</small></td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s4' title='Missed: Street'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s2' title='Missed: Renter, Total rent, Street'>2/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>13 · Beheerdersmodel traditioneel</b><small>13_Beheerdersmodel_traditioneel_ingevuld</small></td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s3' title='Missed: Renter, Total rent'>3/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>14 · TopVoorbeelden origineel</b><small>14_TopVoorbeelden_origineel_ingevuld_TEST</small></td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td><td class='heat s5' title='All five fields correct'>5/5</td></tr><tr><td><b>15 · Huizenvinder origineel</b><small>15_Huizenvinder_origineel_ingevuld_TEST</small></td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s3' title='Missed: Renter, Total rent'>3/5</td><td class='heat s3' title='Missed: Renter, Total rent'>3/5</td><td class='heat s3' title='Missed: Renter, Total rent'>3/5</td><td class='heat s4' title='Missed: Renter'>4/5</td><td class='heat s3' title='Missed: Renter, Total rent'>3/5</td><td class='heat s0' title='Missed: Renter, Total rent, Street, Postcode, City'>0/5</td><td class='heat s3' title='Missed: Renter, Total rent'>3/5</td></tr></tbody>
+</table></div>
+<div class="legend"><span><i class="s5"></i>5/5 correct</span><span><i class="s4"></i>4/5</span><span><i class="s3"></i>3/5</span><span><i class="s2"></i>0–2/5</span></div>
+</section>
+
+<section>
+<div class="section-head"><div><p class="kicker">Failure profile</p><h2>Missing values versus wrong values</h2></div><p class="note">Wrong includes a populated but incorrect value and a value returned where the audited answer is null.</p></div>
+<div class="tablebox"><table>
+<thead><tr><th>Pipeline</th><th>Missing</th><th>Wrong</th><th>Representative errors</th></tr></thead>
+<tbody><tr>
+<td><b>ML→L</b><small>LLM Markdown → LLM</small></td>
+<td class="num">3</td>
+<td class="num">7</td>
+<td>01 Renter: null; 03 Total rent: 1210; 03 Street: Eusebiusbuitsensingel 31; 05 Street: Professor Verbellenlaan 87; +6 more</td>
+</tr><tr>
+<td><b>ML→N</b><small>LLM Markdown → NuExtract</small></td>
+<td class="num">7</td>
+<td class="num">8</td>
+<td>01 Renter: null; 03 Total rent: 1210; 03 Street: Eusebiusbuitsensingel 31; 05 Street: Professor Verbellenlaan 87; +11 more</td>
+</tr><tr>
+<td><b>MM→L</b><small>MarkItDown → LLM</small></td>
+<td class="num">2</td>
+<td class="num">2</td>
+<td>03 Total rent: 1210; 10 Total rent: 1180; 15 Renter: null; 15 Total rent: null</td>
+</tr><tr>
+<td><b>MM→N</b><small>MarkItDown → NuExtract</small></td>
+<td class="num">6</td>
+<td class="num">2</td>
+<td>01 Total rent: null; 02 Renter: null; 03 Total rent: 1210; 07 Renter: null; +4 more</td>
+</tr><tr>
+<td><b>MN→L</b><small>NuExtract Markdown → LLM</small></td>
+<td class="num">2</td>
+<td class="num">2</td>
+<td>03 Total rent: 1265; 09 Renter: null; 10 Total rent: 1180; 15 Renter: null</td>
+</tr><tr>
+<td><b>MN→N</b><small>NuExtract Markdown → NuExtract</small></td>
+<td class="num">4</td>
+<td class="num">1</td>
+<td>03 Total rent: 1265; 09 Renter: null; 11 Renter: null; 15 Renter: null; +1 more</td>
+</tr><tr>
+<td><b>PDF→L</b><small>PDF images → LLM</small></td>
+<td class="num">17</td>
+<td class="num">14</td>
+<td>01 Total rent: null; 01 Street: Randbremgdweg 172; 03 Total rent: 1210; 03 Street: Eusebiusbuitsensingel 31; +27 more</td>
+</tr><tr>
+<td><b>PDF→N</b><small>PDF images → NuExtract</small></td>
+<td class="num">5</td>
+<td class="num">1</td>
+<td>03 Total rent: 1210; 09 Renter: null; 09 City: null; 11 Renter: null; +2 more</td>
+</tr></tbody>
+</table></div>
+</section>
+
+<section>
+<div class="section-head"><div><p class="kicker">Interpretation</p><h2>What the comparison says</h2></div></div>
+<div class="findings">
+<div class="finding"><b>MarkItDown is the pragmatic default.</b><p>Its Markdown is inexpensive, preserves all 45 address components in this set, and gives the highest count of fully correct contracts when paired with the LLM.</p></div>
+<div class="finding"><b>NuExtract Markdown is the best source overall.</b><p>Across both extractors it scores 94.0%. Paired with the LLM it ties the top field score; paired with NuExtract it remains close behind.</p></div>
+<div class="finding"><b>Do not use the general LLM directly on these PDF pages.</b><p>It scores 58.7%, with 17 missing and 14 wrong fields. Contract 15 scores 0/5.</p></div>
+<div class="finding"><b>Direct NuExtract is a credible simpler pipeline.</b><p>At 92.0%, it trails the best two-stage route by only 2.7%, without generating intermediate Markdown.</p></div>
+<div class="finding"><b>Explicit-total logic needs reinforcement.</b><p>Contracts 03 and 10 state components but no total; most routes incorrectly return base rent or calculate a sum. Contract 15 states €1,205 explicitly, yet six routes return null.</p></div>
+<div class="finding"><b>Cross-page name merging is the other weak point.</b><p>Contract 15 is missed by every route, and contracts 01, 09, and 11 expose accent, page-merging, and multiple-renter failures.</p></div>
+</div>
+</section>
+
+<section>
+<details>
+<summary>Audited reference values and special decisions</summary>
+<div class="inside"><div class="tablebox"><table>
+<thead><tr><th>Contract</th><th>Renter</th><th>Explicit total</th><th>Rental property</th><th>Audit note</th></tr></thead>
+<tbody><tr>
+<td><b>01 · ROZ 2025</b></td>
+<td>Anne-Fleur Brouwer</td>
+<td>2040</td>
+<td>Rembrandtweg 172, 1181 GW Amstelveen</td>
+<td></td>
+</tr><tr>
+<td><b>02 · VoorbeeldOffice</b></td>
+<td>Samir Aydin</td>
+<td>1535</td>
+<td>Bemuurde Weerd O.Z. 47-A, 3514 AP Utrecht</td>
+<td></td>
+</tr><tr>
+<td><b>03 · TopVoorbeelden</b></td>
+<td>Sophie Martens</td>
+<td>null</td>
+<td>Eusebiusbuitensingel 31, 6828 HZ Arnhem</td>
+<td>No explicit total is stated; €1,210 base rent and €55 service costs must not be added.</td>
+</tr><tr>
+<td><b>04 · Woonbond formulier</b></td>
+<td>Lucas Smit; Emilia Kowalska</td>
+<td>1320</td>
+<td>Assendorperstraat 132, 8012 CC Zwolle</td>
+<td></td>
+</tr><tr>
+<td><b>05 · VBTM onzelfstandig</b></td>
+<td>Amina Bouzid</td>
+<td>670</td>
+<td>Professor Verbernelaan 87, 5037 AD Tilburg</td>
+<td></td>
+</tr><tr>
+<td><b>06 · Kences campuscontract</b></td>
+<td>Noor van Dijk</td>
+<td>790</td>
+<td>Zernikelaan 73, 9747 AS Groningen</td>
+<td></td>
+</tr><tr>
+<td><b>07 · NVM klassiek</b></td>
+<td>Noura El Idrissi</td>
+<td>1650</td>
+<td>Van Speijkstraat 56-A, 2518 GE &#x27;s-Gravenhage</td>
+<td></td>
+</tr><tr>
+<td><b>08 · Eenvoudig 1 pagina</b></td>
+<td>Lotte van Beek</td>
+<td>930</td>
+<td>Scharnestraat 21, 8601 BB Sneek</td>
+<td></td>
+</tr><tr>
+<td><b>09 · Hayman NL EN</b></td>
+<td>Elena García Martínez</td>
+<td>2005</td>
+<td>Prins Mauritslaan 22-B, 2582 LS Den Haag</td>
+<td>The accented and unaccented renter spellings are treated as semantically equivalent.</td>
+</tr><tr>
+<td><b>10 · model-huurovereenkomst-zelfstandige-woonruimte-2026</b></td>
+<td>Thomas de Wit</td>
+<td>null</td>
+<td>Westedijk 42, 3513 EW Utrecht</td>
+<td>€1,180 is base rent and €115 is a separate advance; no explicit total is stated.</td>
+</tr><tr>
+<td><b>11 · Lang formeel particulier contract</b></td>
+<td>Yasmin Aksoy; Bram Jansen</td>
+<td>2060</td>
+<td>Essenburgsingel 92, 3022 EE Rotterdam</td>
+<td></td>
+</tr><tr>
+<td><b>12 · Traditioneel woningcorporatiemodel</b></td>
+<td>Daan Vermeer</td>
+<td>1014</td>
+<td>Brinkgreverweg 214, 7413 AH Deventer</td>
+<td></td>
+</tr><tr>
+<td><b>13 · Beheerdersmodel traditioneel</b></td>
+<td>Fatima El Amrani</td>
+<td>1805</td>
+<td>Frederik Hendriklaan 188-C, 2582 BJ Den Haag</td>
+<td></td>
+</tr><tr>
+<td><b>14 · TopVoorbeelden origineel</b></td>
+<td>Lotte van Dijk</td>
+<td>1150</td>
+<td>Molenhof 38, 4813 EF Breda</td>
+<td></td>
+</tr><tr>
+<td><b>15 · Huizenvinder origineel</b></td>
+<td>Nora Elise Bakker</td>
+<td>1205</td>
+<td>Lindenhof 27-A, 9714 EF Groningen</td>
+<td>The renter is Nora Elise Bakker and the explicitly stated monthly total is €1,205.</td>
+</tr></tbody>
+</table></div></div>
+</details>
+</section>
+
+<section class="method">
+<b>Method.</b> Final combined records were scored against a manually audited reference derived from the contract content. Numeric values are compared numerically. Text comparison ignores case, punctuation, spacing, accents, smart apostrophes, and “en/and” versus semicolon separators between multiple renter names; substantive spelling differences remain errors. The headline excludes <code>country</code> because all 15 references and all 120 predictions are null, so including it would add 120 non-discriminating correct fields. All 120 combined and 376 page-level files were parsed and validated against the current JSON Schema. “Perfect contract” means all five informative fields are correct. This benchmark measures this 15-document set and these recorded model runs; it is comparative evidence, not a general model benchmark.
+</section>
+</main>
+<footer class="wrap">Generated by <code>generate_quality_report.py</code> from <code>results/</code>. Extraction outputs were not modified.</footer>
+</body>
+</html>
