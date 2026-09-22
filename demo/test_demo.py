@@ -133,6 +133,8 @@ class DemoTests(unittest.TestCase):
         request = client.chat.completions.create.call_args.kwargs
         schema = request["extra_body"]["structured_outputs"]["json"]
         self.assertEqual(schema, ContractExtraction.model_json_schema())
+        self.assertEqual(request["extra_body"]["thinking_token_budget"], 1536)
+        self.assertEqual(request["reasoning_effort"], "high")
         self.assertIn(MARKDOWN, request["messages"][1]["content"])
 
     def test_context_must_be_verbatim(self):

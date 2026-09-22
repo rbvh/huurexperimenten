@@ -129,8 +129,10 @@ def extract_contract(
             {"role": "user", "content": extraction_prompt(markdown)},
         ],
         extra_body={
-            "structured_outputs": {"json": ContractExtraction.model_json_schema()}
+            "structured_outputs": {"json": ContractExtraction.model_json_schema()},
+            "thinking_token_budget": 1536,
         },
+        reasoning_effort="high",
         temperature=0,
     )
     choice = completion.choices[0]

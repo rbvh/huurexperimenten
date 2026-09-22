@@ -27,6 +27,11 @@ Evidence rules:
 - Do not paraphrase, normalize, translate, or add ellipses to context.
 - Markdown syntax is part of the excerpt: preserve characters such as table
   pipes, bold markers, headings, and list markers exactly as supplied.
+- Before returning the result, verify that every non-null context occurs as an
+  exact substring of the supplied Markdown. If it does not, copy a different
+  contiguous excerpt or set both the value and context to null.
+- For Markdown tables, copy complete contiguous source row(s). Never reconstruct
+  a logical column by joining cells that are not contiguous in the Markdown.
 - When a value is not explicitly present or is ambiguous, set both value and
   context to null.
 """
