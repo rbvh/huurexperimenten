@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Noura El Idrissi",
+    "context": "|**`HUURDER`**|`Noura El Idrissi, geboren 14 december 1991 te Gouda`|"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Van Speijkstraat 56-A, 2518 GE ’s-Gravenhage",
+      "context": "|**`GEHUURDE`**|`Van Speijkstraat 56-A, 2518 GE ’s-Gravenhage`|"
+    },
+    "postal_code": {
+      "value": "2518 GE",
+      "context": "|**`GEHUURDE`**|`Van Speijkstraat 56-A, 2518 GE ’s-Gravenhage`|"
+    },
+    "city": {
+      "value": "’s-Gravenhage",
+      "context": "|**`GEHUURDE`**|`Van Speijkstraat 56-A, 2518 GE ’s-Gravenhage`|"
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

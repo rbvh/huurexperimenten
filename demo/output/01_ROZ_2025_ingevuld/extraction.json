@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Anne-Fleur Brouwer",
+    "context": "|**Huurder**|Anne-Fleur Brouwer, geboren 12 februari 1988 te Alkmaar|"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B",
+      "context": "- **1.1** Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38."
+    },
+    "postal_code": {
+      "value": "1181 GW",
+      "context": "- **1.1** Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38."
+    },
+    "city": {
+      "value": "Amstelveen",
+      "context": "- **1.1** Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38."
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

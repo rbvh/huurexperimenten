@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Fatima El Amrani",
+    "context": "2. mevrouw Fatima El Amrani, geboren op 3 september 1986 te Delft, thans wonende aan de Papsouwselaan 218, 2624 EP Delft, telefoon 06 0000 1302, e-mail fatima.elamrani@example.test, documentnummer TEST-ID-1302, hierna huurder."
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Frederik Hendriklaan 188-C, 2582 BJ Den Haag",
+      "context": "1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C"
+    },
+    "postal_code": {
+      "value": "2582 BJ",
+      "context": "1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C"
+    },
+    "city": {
+      "value": "Den Haag",
+      "context": "1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C"
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

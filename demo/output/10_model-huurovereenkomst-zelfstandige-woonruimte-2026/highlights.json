@@ -1,0 +1,230 @@
+{
+  "input_pdf": "/workspace/huurexperimenten/contracts/10_model-huurovereenkomst-zelfstandige-woonruimte-2026.pdf",
+  "highlighted_pdf": "/workspace/huurexperimenten/demo/output/10_model-huurovereenkomst-zelfstandige-woonruimte-2026/highlighted.pdf",
+  "highlight_count": 4,
+  "highlighted_boxes": [
+    {
+      "page_number": 1,
+      "box_index": 5,
+      "class": "section-header",
+      "bbox": [
+        70,
+        228,
+        133,
+        238
+      ],
+      "markdown_start": 206,
+      "markdown_end": 227,
+      "fields": [
+        "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 6,
+      "class": "text",
+      "bbox": [
+        70,
+        244,
+        296,
+        254
+      ],
+      "markdown_start": 227,
+      "markdown_end": 270,
+      "fields": [
+        "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 10,
+      "class": "section-header",
+      "bbox": [
+        70,
+        371,
+        226,
+        380
+      ],
+      "markdown_start": 406,
+      "markdown_end": 448,
+      "fields": [
+        "property_address.street_address",
+        "property_address.postal_code",
+        "property_address.city"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 11,
+      "class": "text",
+      "bbox": [
+        99,
+        384,
+        524,
+        406
+      ],
+      "markdown_start": 448,
+      "markdown_end": 604,
+      "fields": [
+        "property_address.street_address",
+        "property_address.postal_code",
+        "property_address.city"
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "field": "renter_name",
+      "context": "Huurder(s):** \n\nThomas de Wit, geboortedatum: 17-05-1990",
+      "markdown_ranges": [
+        [
+          211,
+          267
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 5,
+          "class": "section-header",
+          "bbox": [
+            70,
+            228,
+            133,
+            238
+          ],
+          "markdown_start": 206,
+          "markdown_end": 227
+        },
+        {
+          "page_number": 1,
+          "box_index": 6,
+          "class": "text",
+          "bbox": [
+            70,
+            244,
+            296,
+            254
+          ],
+          "markdown_start": 227,
+          "markdown_end": 270
+        }
+      ]
+    },
+    {
+      "field": "property_address.street_address",
+      "context": "1.1 **Wat hoort er bij de woning?** \n\nU huurt de woning aan Westedijk 42, 3513 EW in Utrecht",
+      "markdown_ranges": [
+        [
+          410,
+          502
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 10,
+          "class": "section-header",
+          "bbox": [
+            70,
+            371,
+            226,
+            380
+          ],
+          "markdown_start": 406,
+          "markdown_end": 448
+        },
+        {
+          "page_number": 1,
+          "box_index": 11,
+          "class": "text",
+          "bbox": [
+            99,
+            384,
+            524,
+            406
+          ],
+          "markdown_start": 448,
+          "markdown_end": 604
+        }
+      ]
+    },
+    {
+      "field": "property_address.postal_code",
+      "context": "1.1 **Wat hoort er bij de woning?** \n\nU huurt de woning aan Westedijk 42, 3513 EW in Utrecht",
+      "markdown_ranges": [
+        [
+          410,
+          502
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 10,
+          "class": "section-header",
+          "bbox": [
+            70,
+            371,
+            226,
+            380
+          ],
+          "markdown_start": 406,
+          "markdown_end": 448
+        },
+        {
+          "page_number": 1,
+          "box_index": 11,
+          "class": "text",
+          "bbox": [
+            99,
+            384,
+            524,
+            406
+          ],
+          "markdown_start": 448,
+          "markdown_end": 604
+        }
+      ]
+    },
+    {
+      "field": "property_address.city",
+      "context": "1.1 **Wat hoort er bij de woning?** \n\nU huurt de woning aan Westedijk 42, 3513 EW in Utrecht",
+      "markdown_ranges": [
+        [
+          410,
+          502
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 10,
+          "class": "section-header",
+          "bbox": [
+            70,
+            371,
+            226,
+            380
+          ],
+          "markdown_start": 406,
+          "markdown_end": 448
+        },
+        {
+          "page_number": 1,
+          "box_index": 11,
+          "class": "text",
+          "bbox": [
+            99,
+            384,
+            524,
+            406
+          ],
+          "markdown_start": 448,
+          "markdown_end": 604
+        }
+      ]
+    }
+  ],
+  "unmatched_fields": []
+}

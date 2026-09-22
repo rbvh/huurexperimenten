@@ -1,0 +1,173 @@
+{
+  "input_pdf": "/workspace/huurexperimenten/contracts/15_Huizenvinder_origineel_ingevuld_TEST.pdf",
+  "highlighted_pdf": "/workspace/huurexperimenten/demo/output/15_Huizenvinder_origineel_ingevuld_TEST/highlighted.pdf",
+  "highlight_count": 3,
+  "highlighted_boxes": [
+    {
+      "page_number": 1,
+      "box_index": 6,
+      "class": "list-item",
+      "bbox": [
+        70,
+        259,
+        176,
+        267
+      ],
+      "markdown_start": 455,
+      "markdown_end": 472,
+      "fields": [
+        "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 7,
+      "class": "list-item",
+      "bbox": [
+        70,
+        270,
+        187,
+        277
+      ],
+      "markdown_start": 472,
+      "markdown_end": 499,
+      "fields": [
+        "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 17,
+      "class": "text",
+      "bbox": [
+        71,
+        437,
+        501,
+        457
+      ],
+      "markdown_start": 845,
+      "markdown_end": 1038,
+      "fields": [
+        "property_address.street_address",
+        "property_address.postal_code",
+        "property_address.city"
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "field": "renter_name",
+      "context": "Naam: Bakker \n\n- Voornamen:  Nora Elise",
+      "markdown_ranges": [
+        [
+          457,
+          496
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 6,
+          "class": "list-item",
+          "bbox": [
+            70,
+            259,
+            176,
+            267
+          ],
+          "markdown_start": 455,
+          "markdown_end": 472
+        },
+        {
+          "page_number": 1,
+          "box_index": 7,
+          "class": "list-item",
+          "bbox": [
+            70,
+            270,
+            187,
+            277
+          ],
+          "markdown_start": 472,
+          "markdown_end": 499
+        }
+      ]
+    },
+    {
+      "field": "property_address.street_address",
+      "context": "**1.1** Verhuurder verhuurt aan huurder en huurder huurt van verhuurder de zelfstandige woonruimte, hierna 'het gehuurde' genoemd, plaatselijk bekend als Lindenhof 27-A, 9714 EF te Groningen",
+      "markdown_ranges": [
+        [
+          845,
+          1035
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 17,
+          "class": "text",
+          "bbox": [
+            71,
+            437,
+            501,
+            457
+          ],
+          "markdown_start": 845,
+          "markdown_end": 1038
+        }
+      ]
+    },
+    {
+      "field": "property_address.postal_code",
+      "context": "**1.1** Verhuurder verhuurt aan huurder en huurder huurt van verhuurder de zelfstandige woonruimte, hierna 'het gehuurde' genoemd, plaatselijk bekend als Lindenhof 27-A, 9714 EF te Groningen",
+      "markdown_ranges": [
+        [
+          845,
+          1035
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 17,
+          "class": "text",
+          "bbox": [
+            71,
+            437,
+            501,
+            457
+          ],
+          "markdown_start": 845,
+          "markdown_end": 1038
+        }
+      ]
+    },
+    {
+      "field": "property_address.city",
+      "context": "**1.1** Verhuurder verhuurt aan huurder en huurder huurt van verhuurder de zelfstandige woonruimte, hierna 'het gehuurde' genoemd, plaatselijk bekend als Lindenhof 27-A, 9714 EF te Groningen",
+      "markdown_ranges": [
+        [
+          845,
+          1035
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 17,
+          "class": "text",
+          "bbox": [
+            71,
+            437,
+            501,
+            457
+          ],
+          "markdown_start": 845,
+          "markdown_end": 1038
+        }
+      ]
+    }
+  ],
+  "unmatched_fields": []
+}

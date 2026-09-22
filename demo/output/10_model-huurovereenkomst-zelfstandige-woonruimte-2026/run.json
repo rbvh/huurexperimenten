@@ -1,0 +1,13 @@
+{
+  "input_pdf": "/workspace/huurexperimenten/contracts/10_model-huurovereenkomst-zelfstandige-woonruimte-2026.pdf",
+  "markdown": "/workspace/huurexperimenten/demo/output/10_model-huurovereenkomst-zelfstandige-woonruimte-2026/document.md",
+  "source_map": "/workspace/huurexperimenten/demo/output/10_model-huurovereenkomst-zelfstandige-woonruimte-2026/source-map.json",
+  "highlighted_pdf": "/workspace/huurexperimenten/demo/output/10_model-huurovereenkomst-zelfstandige-woonruimte-2026/highlighted.pdf",
+  "highlights": "/workspace/huurexperimenten/demo/output/10_model-huurovereenkomst-zelfstandige-woonruimte-2026/highlights.json",
+  "markdown_producer": "pymupdf4llm",
+  "markdown_producer_version": "1.28.2",
+  "layout_model": true,
+  "ocr": false,
+  "model": "gemma",
+  "base_url": "http://127.0.0.1:8000/v1"
+}

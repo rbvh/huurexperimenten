@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Lotte van Dijk",
+    "context": "en Lotte van Dijk, geboren op 18 mei 1993, wonende te Tilburg, Lindenhof 16, 5038 CD, hierna te noemen \"huurder\"."
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Molenhof 38, 4813 EF Breda",
+      "context": "1.1 De verhuurder verhuurt aan de huurder de woonruimte gelegen aan Molenhof 38, 4813 EF Breda (hierna genoemd: \"het gehuurde\")."
+    },
+    "postal_code": {
+      "value": "4813 EF",
+      "context": "1.1 De verhuurder verhuurt aan de huurder de woonruimte gelegen aan Molenhof 38, 4813 EF Breda (hierna genoemd: \"het gehuurde\")."
+    },
+    "city": {
+      "value": "Breda",
+      "context": "1.1 De verhuurder verhuurt aan de huurder de woonruimte gelegen aan Molenhof 38, 4813 EF Breda (hierna genoemd: \"het gehuurde\")."
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Amina Bouzid",
+    "context": "en Amina Bouzid, geboren op 9 november 2004 te ’s-Hertogenbosch, huidig adres Oude Engelenseweg 22, 5223 KC ’s-Hertogenbosch, studentnummer U20263417, hierna: ‘huurder’,"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Professor Verbernelaan 87, 5037 AD Tilburg",
+      "context": "Verhuurder verhuurt de kamer op de tweede verdieping, aangeduid als kamer 2.3, aan de Professor Verbernelaan 87, 5037 AD Tilburg."
+    },
+    "postal_code": {
+      "value": "5037 AD",
+      "context": "Verhuurder verhuurt de kamer op de tweede verdieping, aangeduid als kamer 2.3, aan de Professor Verbernelaan 87, 5037 AD Tilburg."
+    },
+    "city": {
+      "value": "Tilburg",
+      "context": "Verhuurder verhuurt de kamer op de tweede verdieping, aangeduid als kamer 2.3, aan de Professor Verbernelaan 87, 5037 AD Tilburg."
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

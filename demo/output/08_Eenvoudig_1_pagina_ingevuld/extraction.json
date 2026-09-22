@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Lotte van Beek",
+    "context": "|**Huurder**|Lotte van Beek · geboren 2 mei 1996 te Meppel · 06 0000 0802|"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Scharnestraat 21, 8601 BB Sneek",
+      "context": "|**Woning**|Scharnestraat 21, 8601 BB Sneek · 61 m² · 2 kamers · berging|"
+    },
+    "postal_code": {
+      "value": "8601 BB",
+      "context": "|**Woning**|Scharnestraat 21, 8601 BB Sneek · 61 m² · 2 kamers · berging|"
+    },
+    "city": {
+      "value": "Sneek",
+      "context": "|**Woning**|Scharnestraat 21, 8601 BB Sneek · 61 m² · 2 kamers · berging|"
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

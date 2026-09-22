@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Lucas Smit; Emilia Kowalska",
+    "context": "|**naam huurder(s)**|**bestemming**|\n|Lucas Smit en Emilia Kowalska|hoofdverblijf van twee volwassenen|"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Assendorperstraat 132",
+      "context": "|**adres**|**adres**|\n|Thorbeckegracht 44|Assendorperstraat 132|"
+    },
+    "postal_code": {
+      "value": "8012 CC",
+      "context": "|**postcode / plaats**|**postcode / plaats**|\n|8011 VN Zwolle|8012 CC Zwolle|"
+    },
+    "city": {
+      "value": "Zwolle",
+      "context": "|**postcode / plaats**|**postcode / plaats**|\n|8011 VN Zwolle|8012 CC Zwolle|"
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

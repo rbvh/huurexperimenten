@@ -1,0 +1,129 @@
+{
+  "input_pdf": "/workspace/huurexperimenten/contracts/09_Hayman_NL_EN_ingevuld.pdf",
+  "highlighted_pdf": "/workspace/huurexperimenten/demo/output/09_Hayman_NL_EN_ingevuld/highlighted.pdf",
+  "highlight_count": 1,
+  "highlighted_boxes": [
+    {
+      "page_number": 1,
+      "box_index": 2,
+      "class": "table",
+      "bbox": [
+        41,
+        85,
+        572,
+        491
+      ],
+      "markdown_start": 105,
+      "markdown_end": 2306,
+      "fields": [
+        "renter_name",
+        "property_address.street_address",
+        "property_address.postal_code",
+        "property_address.city"
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "field": "renter_name",
+      "context": "|HUURDER<br>Elena García Martínez<br>geboren 19 juli 1990 te Valencia (ES)<br>huidig adres: Van Alkemadelaan 310, 2597 AV Den Haag<br>06 0000 0902 · elena.garcia@example.test|TENANT<br>Elena García Martínez<br>born 19 July 1990 in Valencia (ES)<br>current address: Van Alkemadelaan 310, 2597 AV The Hague<br>+31 6 0000 0902 · elena.garcia@example.test|",
+      "markdown_ranges": [
+        [
+          524,
+          876
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 2,
+          "class": "table",
+          "bbox": [
+            41,
+            85,
+            572,
+            491
+          ],
+          "markdown_start": 105,
+          "markdown_end": 2306
+        }
+      ]
+    },
+    {
+      "field": "property_address.street_address",
+      "context": "|Gemeubileerd appartement aan Prins Mauritslaan 22-B, 2582 LS Den<br>Haag, 74 m², drie kamers, balkon en berging B-22. Energielabel B; 201<br>WWS-punten.|Furnished apartment at Prins Mauritslaan 22-B, 2582 LS The Hague, 74<br>m², three rooms, balcony and storage unit B-22. Energy label B; 201<br>WWS points.|",
+      "markdown_ranges": [
+        [
+          922,
+          1231
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 2,
+          "class": "table",
+          "bbox": [
+            41,
+            85,
+            572,
+            491
+          ],
+          "markdown_start": 105,
+          "markdown_end": 2306
+        }
+      ]
+    },
+    {
+      "field": "property_address.postal_code",
+      "context": "|Gemeubileerd appartement aan Prins Mauritslaan 22-B, 2582 LS Den<br>Haag, 74 m², drie kamers, balkon en berging B-22. Energielabel B; 201<br>WWS-punten.|Furnished apartment at Prins Mauritslaan 22-B, 2582 LS The Hague, 74<br>m², three rooms, balcony and storage unit B-22. Energy label B; 201<br>WWS points.|",
+      "markdown_ranges": [
+        [
+          922,
+          1231
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 2,
+          "class": "table",
+          "bbox": [
+            41,
+            85,
+            572,
+            491
+          ],
+          "markdown_start": 105,
+          "markdown_end": 2306
+        }
+      ]
+    },
+    {
+      "field": "property_address.city",
+      "context": "|Gemeubileerd appartement aan Prins Mauritslaan 22-B, 2582 LS Den<br>Haag, 74 m², drie kamers, balkon en berging B-22. Energielabel B; 201<br>WWS-punten.|Furnished apartment at Prins Mauritslaan 22-B, 2582 LS The Hague, 74<br>m², three rooms, balcony and storage unit B-22. Energy label B; 201<br>WWS points.|",
+      "markdown_ranges": [
+        [
+          922,
+          1231
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 2,
+          "class": "table",
+          "bbox": [
+            41,
+            85,
+            572,
+            491
+          ],
+          "markdown_start": 105,
+          "markdown_end": 2306
+        }
+      ]
+    }
+  ],
+  "unmatched_fields": []
+}

@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Daan Vermeer",
+    "context": "en de heer Daan Vermeer, geboren op 18 augustus 1992 te Apeldoorn, thans wonende aan de Korenbloemstraat 11, 7311 PA Apeldoorn, bereikbaar via 06 0000 1002 en daan.vermeer@example.test, geïdentificeerd met TEST-ID-1002, hierna te noemen huurder,"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Brinkgreverweg 214, 7413 AH Deventer",
+      "context": "1.1** Verhuurder verhuurt aan huurder de zelfstandige woning aan de Brinkgreverweg 214, 7413 AH Deventer, gelegen op de derde verdieping en bestaande uit een woonkamer, twee slaapkamers, keuken, badkamer, toilet en balkon, met de afzonderlijke berging nummer B-214"
+    },
+    "postal_code": {
+      "value": "7413 AH",
+      "context": "1.1** Verhuurder verhuurt aan huurder de zelfstandige woning aan de Brinkgreverweg 214, 7413 AH Deventer, gelegen op de derde verdieping en bestaande uit een woonkamer, twee slaapkamers, keuken, badkamer, toilet en balkon, met de afzonderlijke berging nummer B-214"
+    },
+    "city": {
+      "value": "Deventer",
+      "context": "1.1** Verhuurder verhuurt aan huurder de zelfstandige woning aan de Brinkgreverweg 214, 7413 AH Deventer, gelegen op de derde verdieping en bestaande uit een woonkamer, twee slaapkamers, keuken, badkamer, toilet en balkon, met de afzonderlijke berging nummer B-214"
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

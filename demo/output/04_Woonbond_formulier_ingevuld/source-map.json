@@ -1,0 +1,274 @@
+{
+  "producer": "pymupdf4llm",
+  "producer_version": "1.28.2",
+  "layout_model": true,
+  "ocr": false,
+  "pages": [
+    {
+      "page_number": 1,
+      "markdown_start": 18,
+      "markdown_end": 1941,
+      "boxes": [
+        {
+          "index": 0,
+          "class": "section-header",
+          "bbox": [
+            35,
+            39,
+            209,
+            54
+          ],
+          "markdown_start": 18,
+          "markdown_end": 43
+        },
+        {
+          "index": 1,
+          "class": "text",
+          "bbox": [
+            35,
+            64,
+            230,
+            73
+          ],
+          "markdown_start": 43,
+          "markdown_end": 94
+        },
+        {
+          "index": 2,
+          "class": "table",
+          "bbox": [
+            63,
+            85,
+            530,
+            295
+          ],
+          "markdown_start": 94,
+          "markdown_end": 852
+        },
+        {
+          "index": 3,
+          "class": "section-header",
+          "bbox": [
+            35,
+            315,
+            191,
+            328
+          ],
+          "markdown_start": 852,
+          "markdown_end": 888
+        },
+        {
+          "index": 4,
+          "class": "table",
+          "bbox": [
+            -6,
+            334,
+            547,
+            402
+          ],
+          "markdown_start": 888,
+          "markdown_end": 1161
+        },
+        {
+          "index": 5,
+          "class": "text",
+          "bbox": [
+            35,
+            408,
+            572,
+            427
+          ],
+          "markdown_start": 1161,
+          "markdown_end": 1344
+        },
+        {
+          "index": 6,
+          "class": "section-header",
+          "bbox": [
+            35,
+            437,
+            95,
+            451
+          ],
+          "markdown_start": 1344,
+          "markdown_end": 1363
+        },
+        {
+          "index": 7,
+          "class": "list-item",
+          "bbox": [
+            35,
+            456,
+            465,
+            465
+          ],
+          "markdown_start": 1363,
+          "markdown_end": 1485
+        },
+        {
+          "index": 8,
+          "class": "list-item",
+          "bbox": [
+            35,
+            469,
+            413,
+            477
+          ],
+          "markdown_start": 1485,
+          "markdown_end": 1591
+        },
+        {
+          "index": 9,
+          "class": "list-item",
+          "bbox": [
+            35,
+            481,
+            318,
+            490
+          ],
+          "markdown_start": 1591,
+          "markdown_end": 1675
+        },
+        {
+          "index": 10,
+          "class": "list-item",
+          "bbox": [
+            35,
+            493,
+            310,
+            502
+          ],
+          "markdown_start": 1675,
+          "markdown_end": 1756
+        },
+        {
+          "index": 11,
+          "class": "list-item",
+          "bbox": [
+            35,
+            505,
+            389,
+            514
+          ],
+          "markdown_start": 1756,
+          "markdown_end": 1852
+        },
+        {
+          "index": 12,
+          "class": "page-footer",
+          "bbox": [
+            151,
+            748,
+            464,
+            756
+          ],
+          "markdown_start": 1852,
+          "markdown_end": 1941
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "markdown_start": 1961,
+      "markdown_end": 3439,
+      "boxes": [
+        {
+          "index": 0,
+          "class": "section-header",
+          "bbox": [
+            35,
+            39,
+            266,
+            58
+          ],
+          "markdown_start": 1961,
+          "markdown_end": 1993
+        },
+        {
+          "index": 1,
+          "class": "text",
+          "bbox": [
+            35,
+            64,
+            266,
+            73
+          ],
+          "markdown_start": 1993,
+          "markdown_end": 2055
+        },
+        {
+          "index": 2,
+          "class": "table",
+          "bbox": [
+            23,
+            85,
+            491,
+            271
+          ],
+          "markdown_start": 2055,
+          "markdown_end": 2855
+        },
+        {
+          "index": 3,
+          "class": "section-header",
+          "bbox": [
+            35,
+            286,
+            184,
+            297
+          ],
+          "markdown_start": 2855,
+          "markdown_end": 2889
+        },
+        {
+          "index": 4,
+          "class": "table",
+          "bbox": [
+            76,
+            310,
+            417,
+            389
+          ],
+          "markdown_start": 2889,
+          "markdown_end": 3061
+        },
+        {
+          "index": 5,
+          "class": "section-header",
+          "bbox": [
+            35,
+            408,
+            85,
+            419
+          ],
+          "markdown_start": 3061,
+          "markdown_end": 3078
+        },
+        {
+          "index": 6,
+          "class": "table",
+          "bbox": [
+            75,
+            446,
+            500,
+            527
+          ],
+          "markdown_start": 3078,
+          "markdown_end": 3350
+        },
+        {
+          "index": 7,
+          "class": "page-footer",
+          "bbox": [
+            151,
+            748,
+            464,
+            756
+          ],
+          "markdown_start": 3350,
+          "markdown_end": 3439
+        }
+      ]
+    }
+  ]
+}

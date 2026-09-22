@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Samir Aydin",
+    "context": "|**Huurder**|Samir Aydin|"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Bemuurde Weerd O.Z. 47-A, 3514 AP Utrecht",
+      "context": "|**Adres gehuurde**|Bemuurde Weerd O.Z. 47-A, 3514 AP Utrecht|"
+    },
+    "postal_code": {
+      "value": "3514 AP",
+      "context": "|**Adres gehuurde**|Bemuurde Weerd O.Z. 47-A, 3514 AP Utrecht|"
+    },
+    "city": {
+      "value": "Utrecht",
+      "context": "|**Adres gehuurde**|Bemuurde Weerd O.Z. 47-A, 3514 AP Utrecht|"
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}

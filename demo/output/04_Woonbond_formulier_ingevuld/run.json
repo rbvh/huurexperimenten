@@ -1,0 +1,13 @@
+{
+  "input_pdf": "/workspace/huurexperimenten/contracts/04_Woonbond_formulier_ingevuld.pdf",
+  "markdown": "/workspace/huurexperimenten/demo/output/04_Woonbond_formulier_ingevuld/document.md",
+  "source_map": "/workspace/huurexperimenten/demo/output/04_Woonbond_formulier_ingevuld/source-map.json",
+  "highlighted_pdf": "/workspace/huurexperimenten/demo/output/04_Woonbond_formulier_ingevuld/highlighted.pdf",
+  "highlights": "/workspace/huurexperimenten/demo/output/04_Woonbond_formulier_ingevuld/highlights.json",
+  "markdown_producer": "pymupdf4llm",
+  "markdown_producer_version": "1.28.2",
+  "layout_model": true,
+  "ocr": false,
+  "model": "gemma",
+  "base_url": "http://127.0.0.1:8000/v1"
+}

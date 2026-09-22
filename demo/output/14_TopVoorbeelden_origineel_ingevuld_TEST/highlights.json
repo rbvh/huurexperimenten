@@ -1,0 +1,144 @@
+{
+  "input_pdf": "/workspace/huurexperimenten/contracts/14_TopVoorbeelden_origineel_ingevuld_TEST.pdf",
+  "highlighted_pdf": "/workspace/huurexperimenten/demo/output/14_TopVoorbeelden_origineel_ingevuld_TEST/highlighted.pdf",
+  "highlight_count": 2,
+  "highlighted_boxes": [
+    {
+      "page_number": 1,
+      "box_index": 2,
+      "class": "text",
+      "bbox": [
+        36,
+        91,
+        561,
+        103
+      ],
+      "markdown_start": 152,
+      "markdown_end": 268,
+      "fields": [
+        "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 12,
+      "class": "text",
+      "bbox": [
+        36,
+        324,
+        524,
+        348
+      ],
+      "markdown_start": 1140,
+      "markdown_end": 1271,
+      "fields": [
+        "property_address.street_address",
+        "property_address.postal_code",
+        "property_address.city"
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "field": "renter_name",
+      "context": "en Lotte van Dijk, geboren op 18 mei 1993, wonende te Tilburg, Lindenhof 16, 5038 CD, hierna te noemen \"huurder\".",
+      "markdown_ranges": [
+        [
+          152,
+          265
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 2,
+          "class": "text",
+          "bbox": [
+            36,
+            91,
+            561,
+            103
+          ],
+          "markdown_start": 152,
+          "markdown_end": 268
+        }
+      ]
+    },
+    {
+      "field": "property_address.street_address",
+      "context": "1.1 De verhuurder verhuurt aan de huurder de woonruimte gelegen aan Molenhof 38, 4813 EF Breda (hierna genoemd: \"het gehuurde\").",
+      "markdown_ranges": [
+        [
+          1140,
+          1268
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 12,
+          "class": "text",
+          "bbox": [
+            36,
+            324,
+            524,
+            348
+          ],
+          "markdown_start": 1140,
+          "markdown_end": 1271
+        }
+      ]
+    },
+    {
+      "field": "property_address.postal_code",
+      "context": "1.1 De verhuurder verhuurt aan de huurder de woonruimte gelegen aan Molenhof 38, 4813 EF Breda (hierna genoemd: \"het gehuurde\").",
+      "markdown_ranges": [
+        [
+          1140,
+          1268
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 12,
+          "class": "text",
+          "bbox": [
+            36,
+            324,
+            524,
+            348
+          ],
+          "markdown_start": 1140,
+          "markdown_end": 1271
+        }
+      ]
+    },
+    {
+      "field": "property_address.city",
+      "context": "1.1 De verhuurder verhuurt aan de huurder de woonruimte gelegen aan Molenhof 38, 4813 EF Breda (hierna genoemd: \"het gehuurde\").",
+      "markdown_ranges": [
+        [
+          1140,
+          1268
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 12,
+          "class": "text",
+          "bbox": [
+            36,
+            324,
+            524,
+            348
+          ],
+          "markdown_start": 1140,
+          "markdown_end": 1271
+        }
+      ]
+    }
+  ],
+  "unmatched_fields": []
+}

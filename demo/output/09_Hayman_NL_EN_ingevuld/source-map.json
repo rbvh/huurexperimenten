@@ -1,0 +1,142 @@
+{
+  "producer": "pymupdf4llm",
+  "producer_version": "1.28.2",
+  "layout_model": true,
+  "ocr": false,
+  "pages": [
+    {
+      "page_number": 1,
+      "markdown_start": 18,
+      "markdown_end": 2399,
+      "boxes": [
+        {
+          "index": 0,
+          "class": "section-header",
+          "bbox": [
+            35,
+            39,
+            391,
+            54
+          ],
+          "markdown_start": 18,
+          "markdown_end": 54
+        },
+        {
+          "index": 1,
+          "class": "text",
+          "bbox": [
+            35,
+            64,
+            230,
+            73
+          ],
+          "markdown_start": 54,
+          "markdown_end": 105
+        },
+        {
+          "index": 2,
+          "class": "table",
+          "bbox": [
+            41,
+            85,
+            572,
+            491
+          ],
+          "markdown_start": 105,
+          "markdown_end": 2306
+        },
+        {
+          "index": 3,
+          "class": "page-footer",
+          "bbox": [
+            146,
+            748,
+            468,
+            756
+          ],
+          "markdown_start": 2306,
+          "markdown_end": 2399
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "markdown_start": 2419,
+      "markdown_end": 5157,
+      "boxes": [
+        {
+          "index": 0,
+          "class": "section-header",
+          "bbox": [
+            35,
+            39,
+            288,
+            54
+          ],
+          "markdown_start": 2419,
+          "markdown_end": 2449
+        },
+        {
+          "index": 1,
+          "class": "section-header",
+          "bbox": [
+            35,
+            64,
+            108,
+            73
+          ],
+          "markdown_start": 2449,
+          "markdown_end": 2476
+        },
+        {
+          "index": 2,
+          "class": "table",
+          "bbox": [
+            41,
+            90,
+            570,
+            543
+          ],
+          "markdown_start": 2476,
+          "markdown_end": 4661
+        },
+        {
+          "index": 3,
+          "class": "section-header",
+          "bbox": [
+            35,
+            562,
+            197,
+            576
+          ],
+          "markdown_start": 4661,
+          "markdown_end": 4697
+        },
+        {
+          "index": 4,
+          "class": "table",
+          "bbox": [
+            75,
+            600,
+            529,
+            686
+          ],
+          "markdown_start": 4697,
+          "markdown_end": 5064
+        },
+        {
+          "index": 5,
+          "class": "page-footer",
+          "bbox": [
+            146,
+            748,
+            468,
+            756
+          ],
+          "markdown_start": 5064,
+          "markdown_end": 5157
+        }
+      ]
+    }
+  ]
+}

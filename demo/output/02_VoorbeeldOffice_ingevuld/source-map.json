@@ -1,0 +1,394 @@
+{
+  "producer": "pymupdf4llm",
+  "producer_version": "1.28.2",
+  "layout_model": true,
+  "ocr": false,
+  "pages": [
+    {
+      "page_number": 1,
+      "markdown_start": 18,
+      "markdown_end": 1387,
+      "boxes": [
+        {
+          "index": 0,
+          "class": "section-header",
+          "bbox": [
+            42,
+            39,
+            458,
+            53
+          ],
+          "markdown_start": 18,
+          "markdown_end": 63
+        },
+        {
+          "index": 1,
+          "class": "text",
+          "bbox": [
+            42,
+            64,
+            184,
+            73
+          ],
+          "markdown_start": 63,
+          "markdown_end": 103
+        },
+        {
+          "index": 2,
+          "class": "table",
+          "bbox": [
+            249,
+            86,
+            363,
+            93
+          ],
+          "markdown_start": 103,
+          "markdown_end": 144
+        },
+        {
+          "index": 3,
+          "class": "table",
+          "bbox": [
+            76,
+            102,
+            456,
+            299
+          ],
+          "markdown_start": 144,
+          "markdown_end": 531
+        },
+        {
+          "index": 4,
+          "class": "section-header",
+          "bbox": [
+            42,
+            319,
+            183,
+            330
+          ],
+          "markdown_start": 531,
+          "markdown_end": 563
+        },
+        {
+          "index": 5,
+          "class": "table",
+          "bbox": [
+            76,
+            343,
+            447,
+            473
+          ],
+          "markdown_start": 563,
+          "markdown_end": 861
+        },
+        {
+          "index": 6,
+          "class": "section-header",
+          "bbox": [
+            42,
+            493,
+            158,
+            504
+          ],
+          "markdown_start": 861,
+          "markdown_end": 890
+        },
+        {
+          "index": 7,
+          "class": "text",
+          "bbox": [
+            42,
+            513,
+            355,
+            522
+          ],
+          "markdown_start": 890,
+          "markdown_end": 976
+        },
+        {
+          "index": 8,
+          "class": "table",
+          "bbox": [
+            76,
+            534,
+            351,
+            590
+          ],
+          "markdown_start": 976,
+          "markdown_end": 1113
+        },
+        {
+          "index": 9,
+          "class": "section-header",
+          "bbox": [
+            42,
+            610,
+            179,
+            623
+          ],
+          "markdown_start": 1113,
+          "markdown_end": 1147
+        },
+        {
+          "index": 10,
+          "class": "table",
+          "bbox": [
+            76,
+            634,
+            319,
+            715
+          ],
+          "markdown_start": 1147,
+          "markdown_end": 1298
+        },
+        {
+          "index": 11,
+          "class": "page-footer",
+          "bbox": [
+            167,
+            747,
+            447,
+            755
+          ],
+          "markdown_start": 1298,
+          "markdown_end": 1387
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "markdown_start": 1407,
+      "markdown_end": 3494,
+      "boxes": [
+        {
+          "index": 0,
+          "class": "table",
+          "bbox": [
+            76,
+            40,
+            424,
+            73
+          ],
+          "markdown_start": 1407,
+          "markdown_end": 1541
+        },
+        {
+          "index": 1,
+          "class": "text",
+          "bbox": [
+            42,
+            84,
+            526,
+            104
+          ],
+          "markdown_start": 1541,
+          "markdown_end": 1689
+        },
+        {
+          "index": 2,
+          "class": "section-header",
+          "bbox": [
+            42,
+            116,
+            167,
+            129
+          ],
+          "markdown_start": 1689,
+          "markdown_end": 1719
+        },
+        {
+          "index": 3,
+          "class": "text",
+          "bbox": [
+            42,
+            136,
+            534,
+            145
+          ],
+          "markdown_start": 1719,
+          "markdown_end": 1854
+        },
+        {
+          "index": 4,
+          "class": "section-header",
+          "bbox": [
+            42,
+            157,
+            189,
+            168
+          ],
+          "markdown_start": 1854,
+          "markdown_end": 1887
+        },
+        {
+          "index": 5,
+          "class": "text",
+          "bbox": [
+            42,
+            176,
+            377,
+            185
+          ],
+          "markdown_start": 1887,
+          "markdown_end": 1976
+        },
+        {
+          "index": 6,
+          "class": "text",
+          "bbox": [
+            42,
+            192,
+            477,
+            201
+          ],
+          "markdown_start": 1976,
+          "markdown_end": 2094
+        },
+        {
+          "index": 7,
+          "class": "text",
+          "bbox": [
+            42,
+            207,
+            562,
+            226
+          ],
+          "markdown_start": 2094,
+          "markdown_end": 2253
+        },
+        {
+          "index": 8,
+          "class": "text",
+          "bbox": [
+            42,
+            234,
+            523,
+            243
+          ],
+          "markdown_start": 2253,
+          "markdown_end": 2385
+        },
+        {
+          "index": 9,
+          "class": "text",
+          "bbox": [
+            42,
+            250,
+            430,
+            259
+          ],
+          "markdown_start": 2385,
+          "markdown_end": 2492
+        },
+        {
+          "index": 10,
+          "class": "section-header",
+          "bbox": [
+            42,
+            270,
+            192,
+            283
+          ],
+          "markdown_start": 2492,
+          "markdown_end": 2528
+        },
+        {
+          "index": 11,
+          "class": "table",
+          "bbox": [
+            76,
+            294,
+            470,
+            375
+          ],
+          "markdown_start": 2528,
+          "markdown_end": 2811
+        },
+        {
+          "index": 12,
+          "class": "section-header",
+          "bbox": [
+            42,
+            395,
+            180,
+            408
+          ],
+          "markdown_start": 2811,
+          "markdown_end": 2843
+        },
+        {
+          "index": 13,
+          "class": "table",
+          "bbox": [
+            76,
+            419,
+            518,
+            475
+          ],
+          "markdown_start": 2843,
+          "markdown_end": 3045
+        },
+        {
+          "index": 14,
+          "class": "section-header",
+          "bbox": [
+            42,
+            495,
+            103,
+            508
+          ],
+          "markdown_start": 3045,
+          "markdown_end": 3066
+        },
+        {
+          "index": 15,
+          "class": "text",
+          "bbox": [
+            42,
+            516,
+            544,
+            525
+          ],
+          "markdown_start": 3066,
+          "markdown_end": 3192
+        },
+        {
+          "index": 16,
+          "class": "section-header",
+          "bbox": [
+            42,
+            536,
+            151,
+            549
+          ],
+          "markdown_start": 3192,
+          "markdown_end": 3219
+        },
+        {
+          "index": 17,
+          "class": "table",
+          "bbox": [
+            75,
+            560,
+            462,
+            603
+          ],
+          "markdown_start": 3219,
+          "markdown_end": 3405
+        },
+        {
+          "index": 18,
+          "class": "page-footer",
+          "bbox": [
+            167,
+            747,
+            447,
+            755
+          ],
+          "markdown_start": 3405,
+          "markdown_end": 3494
+        }
+      ]
+    }
+  ]
+}

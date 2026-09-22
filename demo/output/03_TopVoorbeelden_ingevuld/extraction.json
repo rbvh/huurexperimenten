@@ -1,0 +1,28 @@
+{
+  "renter_name": {
+    "value": "Sophie Martens",
+    "context": "**en** Sophie Martens, geboren op 30 maart 1985 te Nijmegen, wonende aan Graafseweg 109, 6531 ZV Nijmegen (hierna: ‘huurder’)"
+  },
+  "total_rent_price": {
+    "value": null,
+    "context": null
+  },
+  "property_address": {
+    "street_address": {
+      "value": "Eusebiusbuitensingel 31, 6828 HZ Arnhem",
+      "context": "|**Woonruimte**|Vrijstaande woning met tuin en schuur, Eusebiusbuitensingel 31, 6828 HZ<br>Arnhem|"
+    },
+    "postal_code": {
+      "value": "6828 HZ",
+      "context": "|**Woonruimte**|Vrijstaande woning met tuin en schuur, Eusebiusbuitensingel 31, 6828 HZ<br>Arnhem|"
+    },
+    "city": {
+      "value": "Arnhem",
+      "context": "|**Woonruimte**|Vrijstaande woning met tuin en schuur, Eusebiusbuitensingel 31, 6828 HZ<br>Arnhem|"
+    },
+    "country": {
+      "value": null,
+      "context": null
+    }
+  }
+}
