@@ -4,8 +4,8 @@
     "context": "en Amina Bouzid, geboren op 9 november 2004 te ’s-Hertogenbosch, huidig adres Oude Engelenseweg 22, 5223 KC ’s-Hertogenbosch, studentnummer U20263417, hierna: ‘huurder’,"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 670,00",
+    "context": "|**Totaal per maand**|€ 670,00|"
   },
   "property_address": {
     "street_address": {

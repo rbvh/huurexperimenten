@@ -4,8 +4,8 @@
     "context": "|**Huurder**|Noor van Dijk, geboren 4 april 2005 te Hoorn|"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 790,00 per maand",
+    "context": "|**Totaal**|€ 790,00 per maand|"
   },
   "property_address": {
     "street_address": {

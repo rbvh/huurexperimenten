@@ -4,8 +4,8 @@
     "context": "|**`HUURDER`**|`Noura El Idrissi, geboren 14 december 1991 te Gouda`|"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 1.650,00",
+    "context": "TAAL PER MAAND`|`A+B+C`|`€ 1.650,00"
   },
   "property_address": {
     "street_address": {

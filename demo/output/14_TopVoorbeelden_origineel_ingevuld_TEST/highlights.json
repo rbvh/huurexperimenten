@@ -1,7 +1,7 @@
 {
   "input_pdf": "/workspace/huurexperimenten/contracts/14_TopVoorbeelden_origineel_ingevuld_TEST.pdf",
   "highlighted_pdf": "/workspace/huurexperimenten/demo/output/14_TopVoorbeelden_origineel_ingevuld_TEST/highlighted.pdf",
-  "highlight_count": 2,
+  "highlight_count": 3,
   "highlighted_boxes": [
     {
       "page_number": 1,
@@ -17,6 +17,22 @@
       "markdown_end": 268,
       "fields": [
         "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 17,
+      "class": "text",
+      "bbox": [
+        36,
+        539,
+        561,
+        563
+      ],
+      "markdown_start": 2068,
+      "markdown_end": 2275,
+      "fields": [
+        "total_rent_price"
       ]
     },
     {
@@ -61,6 +77,31 @@
           ],
           "markdown_start": 152,
           "markdown_end": 268
+        }
+      ]
+    },
+    {
+      "field": "total_rent_price",
+      "context": "2.1 De huurprijs bedraagt € 1.150,00 per maand en dient uiterlijk op de eerste dag van elke maand vooruit te worden betaald, zonder enige korting of verrekening, op de door de verhuurder aangegeven wijze.",
+      "markdown_ranges": [
+        [
+          2068,
+          2272
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 17,
+          "class": "text",
+          "bbox": [
+            36,
+            539,
+            561,
+            563
+          ],
+          "markdown_start": 2068,
+          "markdown_end": 2275
         }
       ]
     },

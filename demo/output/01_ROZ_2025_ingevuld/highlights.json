@@ -1,7 +1,7 @@
 {
   "input_pdf": "/workspace/huurexperimenten/contracts/01_ROZ_2025_ingevuld.pdf",
   "highlighted_pdf": "/workspace/huurexperimenten/demo/output/01_ROZ_2025_ingevuld/highlighted.pdf",
-  "highlight_count": 2,
+  "highlight_count": 3,
   "highlighted_boxes": [
     {
       "page_number": 1,
@@ -17,6 +17,22 @@
       "markdown_end": 631,
       "fields": [
         "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 18,
+      "class": "table",
+      "bbox": [
+        19,
+        567,
+        388,
+        637
+      ],
+      "markdown_start": 2056,
+      "markdown_end": 2232,
+      "fields": [
+        "total_rent_price"
       ]
     },
     {
@@ -65,11 +81,36 @@
       ]
     },
     {
-      "field": "property_address.street_address",
-      "context": "- **1.1** Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38.",
+      "field": "total_rent_price",
+      "context": "|**Totaal maandbedrag**|**€ 2.040,00**|",
       "markdown_ranges": [
         [
-          899,
+          2189,
+          2228
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 18,
+          "class": "table",
+          "bbox": [
+            19,
+            567,
+            388,
+            637
+          ],
+          "markdown_start": 2056,
+          "markdown_end": 2232
+        }
+      ]
+    },
+    {
+      "field": "property_address.street_address",
+      "context": "Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38.",
+      "markdown_ranges": [
+        [
+          909,
           1068
         ]
       ],
@@ -91,10 +132,10 @@
     },
     {
       "field": "property_address.postal_code",
-      "context": "- **1.1** Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38.",
+      "context": "Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38.",
       "markdown_ranges": [
         [
-          899,
+          909,
           1068
         ]
       ],
@@ -116,10 +157,10 @@
     },
     {
       "field": "property_address.city",
-      "context": "- **1.1** Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38.",
+      "context": "Verhuurder verhuurt aan huurder de zelfstandige woonruimte aan de Rembrandtweg 172, 1181 GW Amstelveen, appartement 4B, met berging B-14 en parkeerplaats P-38.",
       "markdown_ranges": [
         [
-          899,
+          909,
           1068
         ]
       ],

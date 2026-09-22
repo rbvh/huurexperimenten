@@ -1,7 +1,7 @@
 {
   "input_pdf": "/workspace/huurexperimenten/contracts/10_model-huurovereenkomst-zelfstandige-woonruimte-2026.pdf",
   "highlighted_pdf": "/workspace/huurexperimenten/demo/output/10_model-huurovereenkomst-zelfstandige-woonruimte-2026/highlighted.pdf",
-  "highlight_count": 4,
+  "highlight_count": 3,
   "highlighted_boxes": [
     {
       "page_number": 1,
@@ -33,24 +33,6 @@
       "markdown_end": 270,
       "fields": [
         "renter_name"
-      ]
-    },
-    {
-      "page_number": 1,
-      "box_index": 10,
-      "class": "section-header",
-      "bbox": [
-        70,
-        371,
-        226,
-        380
-      ],
-      "markdown_start": 406,
-      "markdown_end": 448,
-      "fields": [
-        "property_address.street_address",
-        "property_address.postal_code",
-        "property_address.city"
       ]
     },
     {
@@ -113,27 +95,14 @@
     },
     {
       "field": "property_address.street_address",
-      "context": "1.1 **Wat hoort er bij de woning?** \n\nU huurt de woning aan Westedijk 42, 3513 EW in Utrecht",
+      "context": "U huurt de woning aan Westedijk 42, 3513 EW in Utrecht.",
       "markdown_ranges": [
         [
-          410,
-          502
+          448,
+          503
         ]
       ],
       "boxes": [
-        {
-          "page_number": 1,
-          "box_index": 10,
-          "class": "section-header",
-          "bbox": [
-            70,
-            371,
-            226,
-            380
-          ],
-          "markdown_start": 406,
-          "markdown_end": 448
-        },
         {
           "page_number": 1,
           "box_index": 11,
@@ -151,27 +120,14 @@
     },
     {
       "field": "property_address.postal_code",
-      "context": "1.1 **Wat hoort er bij de woning?** \n\nU huurt de woning aan Westedijk 42, 3513 EW in Utrecht",
+      "context": "U huurt de woning aan Westedijk 42, 3513 EW in Utrecht.",
       "markdown_ranges": [
         [
-          410,
-          502
+          448,
+          503
         ]
       ],
       "boxes": [
-        {
-          "page_number": 1,
-          "box_index": 10,
-          "class": "section-header",
-          "bbox": [
-            70,
-            371,
-            226,
-            380
-          ],
-          "markdown_start": 406,
-          "markdown_end": 448
-        },
         {
           "page_number": 1,
           "box_index": 11,
@@ -189,27 +145,14 @@
     },
     {
       "field": "property_address.city",
-      "context": "1.1 **Wat hoort er bij de woning?** \n\nU huurt de woning aan Westedijk 42, 3513 EW in Utrecht",
+      "context": "U huurt de woning aan Westedijk 42, 3513 EW in Utrecht.",
       "markdown_ranges": [
         [
-          410,
-          502
+          448,
+          503
         ]
       ],
       "boxes": [
-        {
-          "page_number": 1,
-          "box_index": 10,
-          "class": "section-header",
-          "bbox": [
-            70,
-            371,
-            226,
-            380
-          ],
-          "markdown_start": 406,
-          "markdown_end": 448
-        },
         {
           "page_number": 1,
           "box_index": 11,

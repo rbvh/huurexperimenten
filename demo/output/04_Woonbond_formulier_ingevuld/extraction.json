@@ -4,8 +4,8 @@
     "context": "|**naam huurder(s)**|**bestemming**|\n|Lucas Smit en Emilia Kowalska|hoofdverblijf van twee volwassenen|"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 1.320,00",
+    "context": "|vicekosten totaal|€ 45,00|Totaal per maand|€ 1.320,00|"
   },
   "property_address": {
     "street_address": {

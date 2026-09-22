@@ -17,6 +17,7 @@
       "markdown_end": 555,
       "fields": [
         "renter_name",
+        "total_rent_price",
         "property_address.street_address",
         "property_address.postal_code",
         "property_address.city"
@@ -31,6 +32,31 @@
         [
           201,
           275
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 2,
+          "class": "table",
+          "bbox": [
+            77,
+            84,
+            480,
+            185
+          ],
+          "markdown_start": 79,
+          "markdown_end": 555
+        }
+      ]
+    },
+    {
+      "field": "total_rent_price",
+      "context": "|**Bedragen**|Kale huur € 895,00 · servicekosten € 35,00 · totaal € 930,00|",
+      "markdown_ranges": [
+        [
+          399,
+          474
         ]
       ],
       "boxes": [

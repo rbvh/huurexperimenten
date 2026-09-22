@@ -4,8 +4,8 @@
     "context": "en de heer Daan Vermeer, geboren op 18 augustus 1992 te Apeldoorn, thans wonende aan de Korenbloemstraat 11, 7311 PA Apeldoorn, bereikbaar via 06 0000 1002 en daan.vermeer@example.test, geïdentificeerd met TEST-ID-1002, hierna te noemen huurder,"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 1.014,00",
+    "context": "4.1** De kale huurprijs bedraagt bij aanvang € 846,00 per maand. Daarnaast betaalt huurder maandelijks € 168,00 als voorschot voor servicekosten. Het totale maandbedrag bedraagt derhalve € 1.014,00"
   },
   "property_address": {
     "street_address": {

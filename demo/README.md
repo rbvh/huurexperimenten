@@ -8,7 +8,7 @@ PDF -> PyMuPDF4LLM -> Markdown + source map -> local LLM -> JSON -> highlighted 
 
 PyMuPDF4LLM runs locally with its CPU layout model enabled and OCR disabled.
 The LLM is called through an OpenAI-compatible local endpoint. Each extracted
-field contains both its normalized value and a short verbatim
+field contains both its structured value and a short verbatim
 excerpt from the generated Markdown. The conversion also saves page and layout
 box coordinates with character offsets into the Markdown, providing the basis
 for mapping evidence back to the PDF. The initial highlighting implementation

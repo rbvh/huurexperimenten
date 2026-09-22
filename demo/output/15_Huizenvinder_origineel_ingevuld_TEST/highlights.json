@@ -1,7 +1,7 @@
 {
   "input_pdf": "/workspace/huurexperimenten/contracts/15_Huizenvinder_origineel_ingevuld_TEST.pdf",
   "highlighted_pdf": "/workspace/huurexperimenten/demo/output/15_Huizenvinder_origineel_ingevuld_TEST/highlighted.pdf",
-  "highlight_count": 3,
+  "highlight_count": 4,
   "highlighted_boxes": [
     {
       "page_number": 1,
@@ -33,6 +33,22 @@
       "markdown_end": 499,
       "fields": [
         "renter_name"
+      ]
+    },
+    {
+      "page_number": 2,
+      "box_index": 7,
+      "class": "table",
+      "bbox": [
+        70,
+        269,
+        479,
+        382
+      ],
+      "markdown_start": 4827,
+      "markdown_end": 5368,
+      "fields": [
+        "total_rent_price"
       ]
     },
     {
@@ -90,6 +106,31 @@
           ],
           "markdown_start": 472,
           "markdown_end": 499
+        }
+      ]
+    },
+    {
+      "field": "total_rent_price",
+      "context": "|Zodat huurder per maand in totaal heeft te voldoen|€ 1.205,00|",
+      "markdown_ranges": [
+        [
+          5301,
+          5364
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 2,
+          "box_index": 7,
+          "class": "table",
+          "bbox": [
+            70,
+            269,
+            479,
+            382
+          ],
+          "markdown_start": 4827,
+          "markdown_end": 5368
         }
       ]
     },

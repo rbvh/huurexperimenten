@@ -16,6 +16,8 @@ Extraction rules:
 - total_rent_price is the explicitly stated total monthly rental payment,
   including service costs and utilities only when included in that stated total.
   Exclude deposits and one-time payments. Do not calculate a total from components.
+  Copy its value as text exactly as written, including the currency sign and
+  localized number formatting.
 - property_address is the rented property's address, not a party's contact address.
   Do not infer the country.
 

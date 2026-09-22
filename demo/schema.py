@@ -23,20 +23,6 @@ class TextEvidence(StrictModel):
     )
 
 
-class NumberEvidence(StrictModel):
-    """A numeric value and the source passage supporting it."""
-
-    value: float | None = Field(
-        description="The extracted numeric value, or null when it is not stated."
-    )
-    context: str | None = Field(
-        description=(
-            "A short, verbatim, contiguous excerpt from the supplied Markdown that "
-            "contains the label and value, or null when value is null."
-        )
-    )
-
-
 class PropertyAddress(StrictModel):
     street_address: TextEvidence
     postal_code: TextEvidence
@@ -46,5 +32,5 @@ class PropertyAddress(StrictModel):
 
 class ContractExtraction(StrictModel):
     renter_name: TextEvidence
-    total_rent_price: NumberEvidence
+    total_rent_price: TextEvidence
     property_address: PropertyAddress

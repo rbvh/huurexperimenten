@@ -4,8 +4,8 @@
     "context": "|HUURDER<br>Elena García Martínez<br>geboren 19 juli 1990 te Valencia (ES)<br>huidig adres: Van Alkemadelaan 310, 2597 AV Den Haag<br>06 0000 0902 · elena.garcia@example.test|TENANT<br>Elena García Martínez<br>born 19 July 1990 in Valencia (ES)<br>current address: Van Alkemadelaan 310, 2597 AV The Hague<br>+31 6 0000 0902 · elena.garcia@example.test|"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 2.005,00",
+    "context": "|Kale huur € 1.585,00; servicekosten € 135,00; meubilering € 110,00;<br>voorschot energie/water € 175,00. Totaal € 2.005,00 per maand.|Base rent €1,585.00; service charges €135.00; furniture €110.00; utilities<br>advance €175.00. Total €2,005.00 per month.|"
   },
   "property_address": {
     "street_address": {

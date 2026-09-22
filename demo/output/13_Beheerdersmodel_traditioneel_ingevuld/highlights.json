@@ -1,7 +1,7 @@
 {
   "input_pdf": "/workspace/huurexperimenten/contracts/13_Beheerdersmodel_traditioneel_ingevuld.pdf",
   "highlighted_pdf": "/workspace/huurexperimenten/demo/output/13_Beheerdersmodel_traditioneel_ingevuld/highlighted.pdf",
-  "highlight_count": 2,
+  "highlight_count": 3,
   "highlighted_boxes": [
     {
       "page_number": 1,
@@ -17,6 +17,22 @@
       "markdown_end": 801,
       "fields": [
         "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 17,
+      "class": "list-item",
+      "bbox": [
+        51,
+        531,
+        547,
+        572
+      ],
+      "markdown_start": 2148,
+      "markdown_end": 2412,
+      "fields": [
+        "total_rent_price"
       ]
     },
     {
@@ -65,12 +81,37 @@
       ]
     },
     {
-      "field": "property_address.street_address",
-      "context": "1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C",
+      "field": "total_rent_price",
+      "context": "- **`3.1`** `De kale huur bedraagt € 1.575,00 per maand. De vergoeding voor meubilering en stoffering bedraagt € 95,00 per maand. Het voorschot voor servicekosten bedraagt € 135,00 per maand. Huurder betaalt derhalve bij aanvang in totaal € 1.805,00 per maand.`",
       "markdown_ranges": [
         [
-          910,
-          1112
+          2148,
+          2409
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 17,
+          "class": "list-item",
+          "bbox": [
+            51,
+            531,
+            547,
+            572
+          ],
+          "markdown_start": 2148,
+          "markdown_end": 2412
+        }
+      ]
+    },
+    {
+      "field": "property_address.street_address",
+      "context": "- **`1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C.`",
+      "markdown_ranges": [
+        [
+          905,
+          1114
         ]
       ],
       "boxes": [
@@ -91,11 +132,11 @@
     },
     {
       "field": "property_address.postal_code",
-      "context": "1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C",
+      "context": "- **`1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C.`",
       "markdown_ranges": [
         [
-          910,
-          1112
+          905,
+          1114
         ]
       ],
       "boxes": [
@@ -116,11 +157,11 @@
     },
     {
       "field": "property_address.city",
-      "context": "1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C",
+      "context": "- **`1.1`** `Verhuurder verhuurt aan huurder het gemeubileerde appartement aan de Frederik Hendriklaan 188-C, 2582 BJ Den Haag, tweede verdieping, circa 73 vierkante meter, met balkon en berging nummer 188-C.`",
       "markdown_ranges": [
         [
-          910,
-          1112
+          905,
+          1114
         ]
       ],
       "boxes": [

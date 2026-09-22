@@ -4,8 +4,8 @@
     "context": "|**Huurder**|Samir Aydin|"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 1.535,00 per maand",
+    "context": "|**Totaal**|€ 1.535,00 per maand|"
   },
   "property_address": {
     "street_address": {

@@ -1,7 +1,7 @@
 {
   "input_pdf": "/workspace/huurexperimenten/contracts/05_VBTM_onzelfstandig_ingevuld.pdf",
   "highlighted_pdf": "/workspace/huurexperimenten/demo/output/05_VBTM_onzelfstandig_ingevuld/highlighted.pdf",
-  "highlight_count": 2,
+  "highlight_count": 3,
   "highlighted_boxes": [
     {
       "page_number": 1,
@@ -17,6 +17,22 @@
       "markdown_end": 677,
       "fields": [
         "renter_name"
+      ]
+    },
+    {
+      "page_number": 1,
+      "box_index": 18,
+      "class": "table",
+      "bbox": [
+        76,
+        473,
+        430,
+        602
+      ],
+      "markdown_start": 1915,
+      "markdown_end": 2159,
+      "fields": [
+        "total_rent_price"
       ]
     },
     {
@@ -61,6 +77,31 @@
           ],
           "markdown_start": 505,
           "markdown_end": 677
+        }
+      ]
+    },
+    {
+      "field": "total_rent_price",
+      "context": "|**Totaal per maand**|€ 670,00|",
+      "markdown_ranges": [
+        [
+          2033,
+          2064
+        ]
+      ],
+      "boxes": [
+        {
+          "page_number": 1,
+          "box_index": 18,
+          "class": "table",
+          "bbox": [
+            76,
+            473,
+            430,
+            602
+          ],
+          "markdown_start": 1915,
+          "markdown_end": 2159
         }
       ]
     },

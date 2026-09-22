@@ -4,8 +4,8 @@
     "context": "Naam: Bakker \n\n- Voornamen:  Nora Elise"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 1.205,00",
+    "context": "|Zodat huurder per maand in totaal heeft te voldoen|€ 1.205,00|"
   },
   "property_address": {
     "street_address": {

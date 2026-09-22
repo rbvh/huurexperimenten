@@ -39,7 +39,7 @@ def example_extraction() -> ContractExtraction:
                 "context": "Huurder: Example Renter",
             },
             "total_rent_price": {
-                "value": 1250,
+                "value": "€ 1.250,00",
                 "context": "Totaal per maand: € 1.250,00",
             },
             "property_address": {
@@ -133,6 +133,9 @@ class DemoTests(unittest.TestCase):
         request = client.chat.completions.create.call_args.kwargs
         schema = request["extra_body"]["structured_outputs"]["json"]
         self.assertEqual(schema, ContractExtraction.model_json_schema())
+        self.assertEqual(
+            schema["properties"]["total_rent_price"]["$ref"], "#/$defs/TextEvidence"
+        )
         self.assertEqual(request["extra_body"]["thinking_token_budget"], 1536)
         self.assertEqual(request["reasoning_effort"], "high")
         self.assertIn(MARKDOWN, request["messages"][1]["content"])

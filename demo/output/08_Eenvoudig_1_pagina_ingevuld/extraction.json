@@ -4,8 +4,8 @@
     "context": "|**Huurder**|Lotte van Beek · geboren 2 mei 1996 te Meppel · 06 0000 0802|"
   },
   "total_rent_price": {
-    "value": null,
-    "context": null
+    "value": "€ 930,00",
+    "context": "|**Bedragen**|Kale huur € 895,00 · servicekosten € 35,00 · totaal € 930,00|"
   },
   "property_address": {
     "street_address": {
