@@ -16,6 +16,7 @@ from demo.run_demo import (
     input_pdfs,
     load_environment,
     pdf_to_markdown,
+    repair_contexts,
     validate_context,
 )
 from demo.schema import ContractExtraction
@@ -140,6 +141,37 @@ class DemoTests(unittest.TestCase):
         extraction.renter_name.context = "Renter: Example Renter"
         with self.assertRaisesRegex(RuntimeError, "verbatim"):
             validate_context(extraction, MARKDOWN)
+
+    def test_context_markdown_formatting_is_repaired(self):
+        extraction = example_extraction()
+        markdown = "\n".join(
+            [
+                "|**Huurder**|Example Renter, geboren in Amsterdam|",
+                extraction.total_rent_price.context,
+                extraction.property_address.street_address.context,
+            ]
+        )
+        extraction.renter_name.context = (
+            "Huurder: Example Renter, geboren in Amsterdam"
+        )
+
+        repaired = repair_contexts(extraction, markdown)
+
+        self.assertEqual(repaired, ["renter_name"])
+        self.assertEqual(
+            extraction.renter_name.context,
+            "Huurder**|Example Renter, geboren in Amsterdam",
+        )
+        validate_context(extraction, markdown)
+
+    def test_ambiguous_formatting_free_context_is_not_repaired(self):
+        markdown = "|**Huurder**|Example Renter|\n|**Huurder**|Example Renter|"
+        extraction = example_extraction()
+        extraction.renter_name.context = "Huurder: Example Renter"
+
+        self.assertEqual(repair_contexts(extraction, markdown), [])
+        with self.assertRaisesRegex(RuntimeError, "verbatim"):
+            validate_context(extraction, markdown)
 
     def test_directory_input_finds_pdfs_in_name_order(self):
         with TemporaryDirectory() as temp_dir:

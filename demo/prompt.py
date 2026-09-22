@@ -25,6 +25,8 @@ Evidence rules:
   copied from the supplied Markdown. Include enough surrounding text to identify
   the field and distinguish it from similar values elsewhere in the contract.
 - Do not paraphrase, normalize, translate, or add ellipses to context.
+- Markdown syntax is part of the excerpt: preserve characters such as table
+  pipes, bold markers, headings, and list markers exactly as supplied.
 - When a value is not explicitly present or is ambiguous, set both value and
   context to null.
 """

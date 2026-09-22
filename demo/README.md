@@ -32,6 +32,11 @@ The Pydantic extraction model remains the source of truth. Its JSON Schema is
 sent to vLLM through `structured_outputs`, and the returned JSON is validated
 back into that same Pydantic model.
 
+If the local model returns the right evidence text but omits Markdown formatting
+such as table pipes or bold markers, the demo conservatively restores the exact
+Markdown slice when there is one unique formatting-insensitive match. Ambiguous
+or paraphrased evidence is still rejected.
+
 Then run one contract from the repository root:
 
 ```powershell

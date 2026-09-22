@@ -147,9 +147,9 @@ def extract_contract(
         ) from error
 
 
-def validate_context(extraction: ContractExtraction, markdown: str) -> None:
-    """Ensure evidence is present for values and copied from the source text."""
-    evidence = {
+def evidence_fields(extraction: ContractExtraction) -> dict:
+    """Return each extractable field's value-and-context object."""
+    return {
         "renter_name": extraction.renter_name,
         "total_rent_price": extraction.total_rent_price,
         "property_address.street_address": extraction.property_address.street_address,
@@ -157,8 +157,65 @@ def validate_context(extraction: ContractExtraction, markdown: str) -> None:
         "property_address.city": extraction.property_address.city,
         "property_address.country": extraction.property_address.country,
     }
+
+
+def normalized_text_with_positions(text: str) -> tuple[str, list[int]]:
+    """Normalize words while retaining their character positions in text."""
+    normalized = []
+    positions = []
+    for position, character in enumerate(text):
+        for folded in character.casefold():
+            if folded.isalnum():
+                normalized.append(folded)
+                positions.append(position)
+            elif normalized and normalized[-1] != " ":
+                normalized.append(" ")
+                positions.append(position)
+    if normalized and normalized[-1] == " ":
+        normalized.pop()
+        positions.pop()
+    return "".join(normalized), positions
+
+
+def find_context_ignoring_formatting(context: str, markdown: str) -> str | None:
+    """Find one context match while ignoring Markdown and punctuation syntax."""
+    normalized_markdown, positions = normalized_text_with_positions(markdown)
+    normalized_context, _ = normalized_text_with_positions(context)
+    if not normalized_context:
+        return None
+
+    starts = []
+    cursor = 0
+    while True:
+        start = normalized_markdown.find(normalized_context, cursor)
+        if start == -1:
+            break
+        starts.append(start)
+        cursor = start + 1
+    if len(starts) != 1:
+        return None
+
+    start = starts[0]
+    end = start + len(normalized_context)
+    return markdown[positions[start] : positions[end - 1] + 1]
+
+
+def repair_contexts(extraction: ContractExtraction, markdown: str) -> list[str]:
+    """Replace uniquely matched formatting-free contexts with verbatim Markdown."""
+    repaired = []
+    for field, item in evidence_fields(extraction).items():
+        if item.context and item.context not in markdown:
+            exact_context = find_context_ignoring_formatting(item.context, markdown)
+            if exact_context is not None:
+                item.context = exact_context
+                repaired.append(field)
+    return repaired
+
+
+def validate_context(extraction: ContractExtraction, markdown: str) -> None:
+    """Ensure evidence is present for values and copied from the source text."""
     errors = []
-    for field, item in evidence.items():
+    for field, item in evidence_fields(extraction).items():
         if item.value is None and item.context is not None:
             errors.append(f"{field}: context must be null when value is null")
         elif item.value is not None and not item.context:
@@ -226,6 +283,9 @@ def run(
         max_retries=4,
     )
     extraction = extract_contract(markdown, client, model)
+    repaired_fields = repair_contexts(extraction, markdown)
+    if repaired_fields:
+        print("Restored exact Markdown context for: " + ", ".join(repaired_fields))
     validate_context(extraction, markdown)
 
     result_path = document_dir / "extraction.json"
