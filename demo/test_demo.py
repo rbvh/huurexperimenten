@@ -9,6 +9,7 @@ from unittest.mock import Mock, patch
 import pymupdf
 
 from demo.highlight_pdf import highlight_extraction_boxes
+from demo.view_results import REQUIRED_OUTPUT_FILES, discover_output_dirs
 
 from demo.run_demo import (
     DEFAULT_ENV_FILE,
@@ -194,6 +195,22 @@ class DemoTests(unittest.TestCase):
         with TemporaryDirectory() as temp_dir:
             with self.assertRaisesRegex(FileNotFoundError, "No PDF files"):
                 input_pdfs(Path(temp_dir))
+
+    def test_viewer_discovers_complete_outputs_in_name_order(self):
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            second = root / "B-contract"
+            first = root / "a-contract"
+            incomplete = root / "incomplete"
+            for directory in (second, first, incomplete):
+                directory.mkdir()
+            for directory in (second, first):
+                for filename in REQUIRED_OUTPUT_FILES:
+                    (directory / filename).touch()
+            (incomplete / "extraction.json").touch()
+
+            self.assertEqual(discover_output_dirs(root), [first, second])
+            self.assertEqual(discover_output_dirs(first), [first])
 
     def test_highlights_overlapping_source_map_boxes_once(self):
         source_map = {

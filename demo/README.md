@@ -85,15 +85,16 @@ box is highlighted only once.
 
 ## View results
 
-Open a local browser interface for one output directory:
+Open a local browser interface for all completed document outputs:
 
 ```powershell
-uv run python demo/view_results.py demo/output/01_ROZ_2025_ingevuld
+uv run python demo/view_results.py demo/output
 ```
 
-The left side shows rendered pages from `highlighted.pdf`, and the right side
-shows the extracted values. Clicking a field scrolls the PDF pane to its first
-matched source-map box. Stop the local server with `Ctrl+C`.
+Use the selector above the left PDF pane to switch documents. The right side is
+updated with that document's extracted values. Clicking a field scrolls the PDF
+pane to its first matched source-map box. Passing one individual document output
+directory remains supported. Stop the local server with `Ctrl+C`.
 
 Override the model or output directory when needed:
 
